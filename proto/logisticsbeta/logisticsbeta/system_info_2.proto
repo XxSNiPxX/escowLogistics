@@ -1,0 +1,9 @@
+syntax = "proto3";
+package logisticsbeta.logisticsbeta;
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
+
+message SystemInfo2 {
+  uint64 nextVendor = 1; 
+  
+}

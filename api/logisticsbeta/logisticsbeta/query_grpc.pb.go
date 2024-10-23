@@ -8,7 +8,6 @@ package logisticsbeta
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +19,19 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName = "/logisticsbeta.logisticsbeta.Query/Params"
+	Query_Params_FullMethodName         = "/logisticsbeta.logisticsbeta.Query/Params"
+	Query_SystemInfo1_FullMethodName    = "/logisticsbeta.logisticsbeta.Query/SystemInfo1"
+	Query_SystemInfo2_FullMethodName    = "/logisticsbeta.logisticsbeta.Query/SystemInfo2"
+	Query_SystemInfo3_FullMethodName    = "/logisticsbeta.logisticsbeta.Query/SystemInfo3"
+	Query_Vendor_FullMethodName         = "/logisticsbeta.logisticsbeta.Query/Vendor"
+	Query_VendorAll_FullMethodName      = "/logisticsbeta.logisticsbeta.Query/VendorAll"
+	Query_Purchaser_FullMethodName      = "/logisticsbeta.logisticsbeta.Query/Purchaser"
+	Query_PurchaserAll_FullMethodName   = "/logisticsbeta.logisticsbeta.Query/PurchaserAll"
+	Query_Transporter_FullMethodName    = "/logisticsbeta.logisticsbeta.Query/Transporter"
+	Query_TransporterAll_FullMethodName = "/logisticsbeta.logisticsbeta.Query/TransporterAll"
+	Query_SystemInfo4_FullMethodName    = "/logisticsbeta.logisticsbeta.Query/SystemInfo4"
+	Query_Trade_FullMethodName          = "/logisticsbeta.logisticsbeta.Query/Trade"
+	Query_TradeAll_FullMethodName       = "/logisticsbeta.logisticsbeta.Query/TradeAll"
 )
 
 // QueryClient is the client API for Query service.
@@ -29,6 +40,26 @@ const (
 type QueryClient interface {
 	// Parameters queries the parameters of the module.
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	// Queries a SystemInfo1 by index.
+	SystemInfo1(ctx context.Context, in *QueryGetSystemInfo1Request, opts ...grpc.CallOption) (*QueryGetSystemInfo1Response, error)
+	// Queries a SystemInfo2 by index.
+	SystemInfo2(ctx context.Context, in *QueryGetSystemInfo2Request, opts ...grpc.CallOption) (*QueryGetSystemInfo2Response, error)
+	// Queries a SystemInfo3 by index.
+	SystemInfo3(ctx context.Context, in *QueryGetSystemInfo3Request, opts ...grpc.CallOption) (*QueryGetSystemInfo3Response, error)
+	// Queries a list of Vendor items.
+	Vendor(ctx context.Context, in *QueryGetVendorRequest, opts ...grpc.CallOption) (*QueryGetVendorResponse, error)
+	VendorAll(ctx context.Context, in *QueryAllVendorRequest, opts ...grpc.CallOption) (*QueryAllVendorResponse, error)
+	// Queries a list of Purchaser items.
+	Purchaser(ctx context.Context, in *QueryGetPurchaserRequest, opts ...grpc.CallOption) (*QueryGetPurchaserResponse, error)
+	PurchaserAll(ctx context.Context, in *QueryAllPurchaserRequest, opts ...grpc.CallOption) (*QueryAllPurchaserResponse, error)
+	// Queries a list of Transporter items.
+	Transporter(ctx context.Context, in *QueryGetTransporterRequest, opts ...grpc.CallOption) (*QueryGetTransporterResponse, error)
+	TransporterAll(ctx context.Context, in *QueryAllTransporterRequest, opts ...grpc.CallOption) (*QueryAllTransporterResponse, error)
+	// Queries a SystemInfo4 by index.
+	SystemInfo4(ctx context.Context, in *QueryGetSystemInfo4Request, opts ...grpc.CallOption) (*QueryGetSystemInfo4Response, error)
+	// Queries a list of Trade items.
+	Trade(ctx context.Context, in *QueryGetTradeRequest, opts ...grpc.CallOption) (*QueryGetTradeResponse, error)
+	TradeAll(ctx context.Context, in *QueryAllTradeRequest, opts ...grpc.CallOption) (*QueryAllTradeResponse, error)
 }
 
 type queryClient struct {
@@ -48,12 +79,140 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
+func (c *queryClient) SystemInfo1(ctx context.Context, in *QueryGetSystemInfo1Request, opts ...grpc.CallOption) (*QueryGetSystemInfo1Response, error) {
+	out := new(QueryGetSystemInfo1Response)
+	err := c.cc.Invoke(ctx, Query_SystemInfo1_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) SystemInfo2(ctx context.Context, in *QueryGetSystemInfo2Request, opts ...grpc.CallOption) (*QueryGetSystemInfo2Response, error) {
+	out := new(QueryGetSystemInfo2Response)
+	err := c.cc.Invoke(ctx, Query_SystemInfo2_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) SystemInfo3(ctx context.Context, in *QueryGetSystemInfo3Request, opts ...grpc.CallOption) (*QueryGetSystemInfo3Response, error) {
+	out := new(QueryGetSystemInfo3Response)
+	err := c.cc.Invoke(ctx, Query_SystemInfo3_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Vendor(ctx context.Context, in *QueryGetVendorRequest, opts ...grpc.CallOption) (*QueryGetVendorResponse, error) {
+	out := new(QueryGetVendorResponse)
+	err := c.cc.Invoke(ctx, Query_Vendor_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) VendorAll(ctx context.Context, in *QueryAllVendorRequest, opts ...grpc.CallOption) (*QueryAllVendorResponse, error) {
+	out := new(QueryAllVendorResponse)
+	err := c.cc.Invoke(ctx, Query_VendorAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Purchaser(ctx context.Context, in *QueryGetPurchaserRequest, opts ...grpc.CallOption) (*QueryGetPurchaserResponse, error) {
+	out := new(QueryGetPurchaserResponse)
+	err := c.cc.Invoke(ctx, Query_Purchaser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) PurchaserAll(ctx context.Context, in *QueryAllPurchaserRequest, opts ...grpc.CallOption) (*QueryAllPurchaserResponse, error) {
+	out := new(QueryAllPurchaserResponse)
+	err := c.cc.Invoke(ctx, Query_PurchaserAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Transporter(ctx context.Context, in *QueryGetTransporterRequest, opts ...grpc.CallOption) (*QueryGetTransporterResponse, error) {
+	out := new(QueryGetTransporterResponse)
+	err := c.cc.Invoke(ctx, Query_Transporter_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) TransporterAll(ctx context.Context, in *QueryAllTransporterRequest, opts ...grpc.CallOption) (*QueryAllTransporterResponse, error) {
+	out := new(QueryAllTransporterResponse)
+	err := c.cc.Invoke(ctx, Query_TransporterAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) SystemInfo4(ctx context.Context, in *QueryGetSystemInfo4Request, opts ...grpc.CallOption) (*QueryGetSystemInfo4Response, error) {
+	out := new(QueryGetSystemInfo4Response)
+	err := c.cc.Invoke(ctx, Query_SystemInfo4_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Trade(ctx context.Context, in *QueryGetTradeRequest, opts ...grpc.CallOption) (*QueryGetTradeResponse, error) {
+	out := new(QueryGetTradeResponse)
+	err := c.cc.Invoke(ctx, Query_Trade_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) TradeAll(ctx context.Context, in *QueryAllTradeRequest, opts ...grpc.CallOption) (*QueryAllTradeResponse, error) {
+	out := new(QueryAllTradeResponse)
+	err := c.cc.Invoke(ctx, Query_TradeAll_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 // All implementations must embed UnimplementedQueryServer
 // for forward compatibility
 type QueryServer interface {
 	// Parameters queries the parameters of the module.
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	// Queries a SystemInfo1 by index.
+	SystemInfo1(context.Context, *QueryGetSystemInfo1Request) (*QueryGetSystemInfo1Response, error)
+	// Queries a SystemInfo2 by index.
+	SystemInfo2(context.Context, *QueryGetSystemInfo2Request) (*QueryGetSystemInfo2Response, error)
+	// Queries a SystemInfo3 by index.
+	SystemInfo3(context.Context, *QueryGetSystemInfo3Request) (*QueryGetSystemInfo3Response, error)
+	// Queries a list of Vendor items.
+	Vendor(context.Context, *QueryGetVendorRequest) (*QueryGetVendorResponse, error)
+	VendorAll(context.Context, *QueryAllVendorRequest) (*QueryAllVendorResponse, error)
+	// Queries a list of Purchaser items.
+	Purchaser(context.Context, *QueryGetPurchaserRequest) (*QueryGetPurchaserResponse, error)
+	PurchaserAll(context.Context, *QueryAllPurchaserRequest) (*QueryAllPurchaserResponse, error)
+	// Queries a list of Transporter items.
+	Transporter(context.Context, *QueryGetTransporterRequest) (*QueryGetTransporterResponse, error)
+	TransporterAll(context.Context, *QueryAllTransporterRequest) (*QueryAllTransporterResponse, error)
+	// Queries a SystemInfo4 by index.
+	SystemInfo4(context.Context, *QueryGetSystemInfo4Request) (*QueryGetSystemInfo4Response, error)
+	// Queries a list of Trade items.
+	Trade(context.Context, *QueryGetTradeRequest) (*QueryGetTradeResponse, error)
+	TradeAll(context.Context, *QueryAllTradeRequest) (*QueryAllTradeResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -63,6 +222,42 @@ type UnimplementedQueryServer struct {
 
 func (UnimplementedQueryServer) Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (UnimplementedQueryServer) SystemInfo1(context.Context, *QueryGetSystemInfo1Request) (*QueryGetSystemInfo1Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SystemInfo1 not implemented")
+}
+func (UnimplementedQueryServer) SystemInfo2(context.Context, *QueryGetSystemInfo2Request) (*QueryGetSystemInfo2Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SystemInfo2 not implemented")
+}
+func (UnimplementedQueryServer) SystemInfo3(context.Context, *QueryGetSystemInfo3Request) (*QueryGetSystemInfo3Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SystemInfo3 not implemented")
+}
+func (UnimplementedQueryServer) Vendor(context.Context, *QueryGetVendorRequest) (*QueryGetVendorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Vendor not implemented")
+}
+func (UnimplementedQueryServer) VendorAll(context.Context, *QueryAllVendorRequest) (*QueryAllVendorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method VendorAll not implemented")
+}
+func (UnimplementedQueryServer) Purchaser(context.Context, *QueryGetPurchaserRequest) (*QueryGetPurchaserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Purchaser not implemented")
+}
+func (UnimplementedQueryServer) PurchaserAll(context.Context, *QueryAllPurchaserRequest) (*QueryAllPurchaserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PurchaserAll not implemented")
+}
+func (UnimplementedQueryServer) Transporter(context.Context, *QueryGetTransporterRequest) (*QueryGetTransporterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Transporter not implemented")
+}
+func (UnimplementedQueryServer) TransporterAll(context.Context, *QueryAllTransporterRequest) (*QueryAllTransporterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TransporterAll not implemented")
+}
+func (UnimplementedQueryServer) SystemInfo4(context.Context, *QueryGetSystemInfo4Request) (*QueryGetSystemInfo4Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SystemInfo4 not implemented")
+}
+func (UnimplementedQueryServer) Trade(context.Context, *QueryGetTradeRequest) (*QueryGetTradeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Trade not implemented")
+}
+func (UnimplementedQueryServer) TradeAll(context.Context, *QueryAllTradeRequest) (*QueryAllTradeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TradeAll not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -95,6 +290,222 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_SystemInfo1_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetSystemInfo1Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).SystemInfo1(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_SystemInfo1_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).SystemInfo1(ctx, req.(*QueryGetSystemInfo1Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_SystemInfo2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetSystemInfo2Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).SystemInfo2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_SystemInfo2_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).SystemInfo2(ctx, req.(*QueryGetSystemInfo2Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_SystemInfo3_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetSystemInfo3Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).SystemInfo3(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_SystemInfo3_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).SystemInfo3(ctx, req.(*QueryGetSystemInfo3Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Vendor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetVendorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Vendor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_Vendor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Vendor(ctx, req.(*QueryGetVendorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_VendorAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllVendorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).VendorAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_VendorAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).VendorAll(ctx, req.(*QueryAllVendorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Purchaser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetPurchaserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Purchaser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_Purchaser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Purchaser(ctx, req.(*QueryGetPurchaserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_PurchaserAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllPurchaserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).PurchaserAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_PurchaserAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).PurchaserAll(ctx, req.(*QueryAllPurchaserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Transporter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetTransporterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Transporter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_Transporter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Transporter(ctx, req.(*QueryGetTransporterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_TransporterAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllTransporterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).TransporterAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_TransporterAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).TransporterAll(ctx, req.(*QueryAllTransporterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_SystemInfo4_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetSystemInfo4Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).SystemInfo4(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_SystemInfo4_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).SystemInfo4(ctx, req.(*QueryGetSystemInfo4Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Trade_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryGetTradeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Trade(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_Trade_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Trade(ctx, req.(*QueryGetTradeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_TradeAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryAllTradeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).TradeAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Query_TradeAll_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).TradeAll(ctx, req.(*QueryAllTradeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Query_ServiceDesc is the grpc.ServiceDesc for Query service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -105,6 +516,54 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
+		},
+		{
+			MethodName: "SystemInfo1",
+			Handler:    _Query_SystemInfo1_Handler,
+		},
+		{
+			MethodName: "SystemInfo2",
+			Handler:    _Query_SystemInfo2_Handler,
+		},
+		{
+			MethodName: "SystemInfo3",
+			Handler:    _Query_SystemInfo3_Handler,
+		},
+		{
+			MethodName: "Vendor",
+			Handler:    _Query_Vendor_Handler,
+		},
+		{
+			MethodName: "VendorAll",
+			Handler:    _Query_VendorAll_Handler,
+		},
+		{
+			MethodName: "Purchaser",
+			Handler:    _Query_Purchaser_Handler,
+		},
+		{
+			MethodName: "PurchaserAll",
+			Handler:    _Query_PurchaserAll_Handler,
+		},
+		{
+			MethodName: "Transporter",
+			Handler:    _Query_Transporter_Handler,
+		},
+		{
+			MethodName: "TransporterAll",
+			Handler:    _Query_TransporterAll_Handler,
+		},
+		{
+			MethodName: "SystemInfo4",
+			Handler:    _Query_SystemInfo4_Handler,
+		},
+		{
+			MethodName: "Trade",
+			Handler:    _Query_Trade_Handler,
+		},
+		{
+			MethodName: "TradeAll",
+			Handler:    _Query_TradeAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

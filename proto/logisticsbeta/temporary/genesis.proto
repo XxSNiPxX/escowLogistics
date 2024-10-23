@@ -1,0 +1,17 @@
+syntax = "proto3";
+package logisticsbeta.temporary;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "logisticsbeta/temporary/params.proto";
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/temporary/types";
+
+// GenesisState defines the temporary module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}

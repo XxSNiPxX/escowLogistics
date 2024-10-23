@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package logisticsbeta.logisticsbeta;
 
 import "amino/amino.proto";
@@ -6,25 +7,189 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "logisticsbeta/logisticsbeta/params.proto";
+import "logisticsbeta/logisticsbeta/system_info_1.proto";
+import "logisticsbeta/logisticsbeta/system_info_2.proto";
+import "logisticsbeta/logisticsbeta/system_info_3.proto";
+import "logisticsbeta/logisticsbeta/vendor.proto";
+import "logisticsbeta/logisticsbeta/purchaser.proto";
+import "logisticsbeta/logisticsbeta/transporter.proto";
+import "logisticsbeta/logisticsbeta/system_info_4.proto";
+import "logisticsbeta/logisticsbeta/trade.proto";
 
 option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
 
 // Query defines the gRPC querier service.
 service Query {
+  
   // Parameters queries the parameters of the module.
-  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+  rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/params";
+  
+  }
+  
+  // Queries a SystemInfo1 by index.
+  rpc SystemInfo1 (QueryGetSystemInfo1Request) returns (QueryGetSystemInfo1Response) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/system_info_1";
+  
+  }
+  
+  // Queries a SystemInfo2 by index.
+  rpc SystemInfo2 (QueryGetSystemInfo2Request) returns (QueryGetSystemInfo2Response) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/system_info_2";
+  
+  }
+  
+  // Queries a SystemInfo3 by index.
+  rpc SystemInfo3 (QueryGetSystemInfo3Request) returns (QueryGetSystemInfo3Response) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/system_info_3";
+  
+  }
+  
+  // Queries a list of Vendor items.
+  rpc Vendor    (QueryGetVendorRequest) returns (QueryGetVendorResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/vendor/{vendorid}";
+  
+  }
+  rpc VendorAll (QueryAllVendorRequest) returns (QueryAllVendorResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/vendor";
+  
+  }
+  
+  // Queries a list of Purchaser items.
+  rpc Purchaser    (QueryGetPurchaserRequest) returns (QueryGetPurchaserResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/purchaser/{purchaserid}";
+  
+  }
+  rpc PurchaserAll (QueryAllPurchaserRequest) returns (QueryAllPurchaserResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/purchaser";
+  
+  }
+  
+  // Queries a list of Transporter items.
+  rpc Transporter    (QueryGetTransporterRequest) returns (QueryGetTransporterResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/transporter/{transporterid}";
+  
+  }
+  rpc TransporterAll (QueryAllTransporterRequest) returns (QueryAllTransporterResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/transporter";
+  
+  }
+  
+  // Queries a SystemInfo4 by index.
+  rpc SystemInfo4 (QueryGetSystemInfo4Request) returns (QueryGetSystemInfo4Response) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/system_info_4";
+  
+  }
+  
+  // Queries a list of Trade items.
+  rpc Trade    (QueryGetTradeRequest) returns (QueryGetTradeResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/trade/{tradeid}";
+  
+  }
+  rpc TradeAll (QueryAllTradeRequest) returns (QueryAllTradeResponse) {
+    option (google.api.http).get = "/XxSNiPxX/logisticsBeta/logisticsbeta/trade";
+  
   }
 }
-
 // QueryParamsRequest is request type for the Query/Params RPC method.
 message QueryParamsRequest {}
 
 // QueryParamsResponse is response type for the Query/Params RPC method.
 message QueryParamsResponse {
+  
   // params holds all the parameters of this module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+  Params params = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
+
+message QueryGetSystemInfo1Request {}
+
+message QueryGetSystemInfo1Response {
+  SystemInfo1 SystemInfo1 = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetSystemInfo2Request {}
+
+message QueryGetSystemInfo2Response {
+  SystemInfo2 SystemInfo2 = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetSystemInfo3Request {}
+
+message QueryGetSystemInfo3Response {
+  SystemInfo3 SystemInfo3 = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetVendorRequest {
+  string vendorid = 1;
+}
+
+message QueryGetVendorResponse {
+  Vendor vendor = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllVendorRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllVendorResponse {
+  repeated Vendor                                 vendor     = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetPurchaserRequest {
+  string purchaserid = 1;
+}
+
+message QueryGetPurchaserResponse {
+  Purchaser purchaser = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllPurchaserRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllPurchaserResponse {
+  repeated Purchaser                              purchaser  = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetTransporterRequest {
+  string transporterid = 1;
+}
+
+message QueryGetTransporterResponse {
+  Transporter transporter = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllTransporterRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTransporterResponse {
+  repeated Transporter                            transporter = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination  = 2;
+}
+
+message QueryGetSystemInfo4Request {}
+
+message QueryGetSystemInfo4Response {
+  SystemInfo4 SystemInfo4 = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetTradeRequest {
+  string tradeid = 1;
+}
+
+message QueryGetTradeResponse {
+  Trade trade = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllTradeRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllTradeResponse {
+  repeated Trade                                  trade      = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+

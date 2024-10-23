@@ -1,0 +1,15 @@
+syntax = "proto3";
+package logisticsbeta.logisticsbeta;
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
+
+message Vendor {
+  string vendorid = 1; 
+  string name = 2; 
+  string commodity = 3; 
+  string location = 4; 
+  string walletId = 5; 
+  string offchainId = 6; 
+  
+}
+

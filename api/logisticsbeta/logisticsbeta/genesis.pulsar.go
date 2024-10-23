@@ -2,28 +2,247 @@
 package logisticsbeta
 
 import (
-	fmt "fmt"
-	io "io"
-	reflect "reflect"
-	sync "sync"
-
 	_ "cosmossdk.io/api/amino"
+	fmt "fmt"
 	runtime "github.com/cosmos/cosmos-proto/runtime"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoiface "google.golang.org/protobuf/runtime/protoiface"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	io "io"
+	reflect "reflect"
+	sync "sync"
 )
 
+var _ protoreflect.List = (*_GenesisState_5_list)(nil)
+
+type _GenesisState_5_list struct {
+	list *[]*Vendor
+}
+
+func (x *_GenesisState_5_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_5_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_5_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Vendor)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_5_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Vendor)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_5_list) AppendMutable() protoreflect.Value {
+	v := new(Vendor)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_5_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_5_list) NewElement() protoreflect.Value {
+	v := new(Vendor)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_5_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_6_list)(nil)
+
+type _GenesisState_6_list struct {
+	list *[]*Purchaser
+}
+
+func (x *_GenesisState_6_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_6_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_6_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Purchaser)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_6_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Purchaser)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_6_list) AppendMutable() protoreflect.Value {
+	v := new(Purchaser)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_6_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_6_list) NewElement() protoreflect.Value {
+	v := new(Purchaser)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_6_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_7_list)(nil)
+
+type _GenesisState_7_list struct {
+	list *[]*Transporter
+}
+
+func (x *_GenesisState_7_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_7_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_7_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Transporter)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_7_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Transporter)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_7_list) AppendMutable() protoreflect.Value {
+	v := new(Transporter)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_7_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_7_list) NewElement() protoreflect.Value {
+	v := new(Transporter)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_7_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_9_list)(nil)
+
+type _GenesisState_9_list struct {
+	list *[]*Trade
+}
+
+func (x *_GenesisState_9_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_9_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_9_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Trade)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_9_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Trade)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_9_list) AppendMutable() protoreflect.Value {
+	v := new(Trade)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_9_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_9_list) NewElement() protoreflect.Value {
+	v := new(Trade)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_9_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_GenesisState        protoreflect.MessageDescriptor
-	fd_GenesisState_params protoreflect.FieldDescriptor
+	md_GenesisState                 protoreflect.MessageDescriptor
+	fd_GenesisState_params          protoreflect.FieldDescriptor
+	fd_GenesisState_systemInfo1     protoreflect.FieldDescriptor
+	fd_GenesisState_systemInfo2     protoreflect.FieldDescriptor
+	fd_GenesisState_systemInfo3     protoreflect.FieldDescriptor
+	fd_GenesisState_vendorList      protoreflect.FieldDescriptor
+	fd_GenesisState_purchaserList   protoreflect.FieldDescriptor
+	fd_GenesisState_transporterList protoreflect.FieldDescriptor
+	fd_GenesisState_systemInfo4     protoreflect.FieldDescriptor
+	fd_GenesisState_tradeList       protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_logisticsbeta_logisticsbeta_genesis_proto_init()
 	md_GenesisState = File_logisticsbeta_logisticsbeta_genesis_proto.Messages().ByName("GenesisState")
 	fd_GenesisState_params = md_GenesisState.Fields().ByName("params")
+	fd_GenesisState_systemInfo1 = md_GenesisState.Fields().ByName("systemInfo1")
+	fd_GenesisState_systemInfo2 = md_GenesisState.Fields().ByName("systemInfo2")
+	fd_GenesisState_systemInfo3 = md_GenesisState.Fields().ByName("systemInfo3")
+	fd_GenesisState_vendorList = md_GenesisState.Fields().ByName("vendorList")
+	fd_GenesisState_purchaserList = md_GenesisState.Fields().ByName("purchaserList")
+	fd_GenesisState_transporterList = md_GenesisState.Fields().ByName("transporterList")
+	fd_GenesisState_systemInfo4 = md_GenesisState.Fields().ByName("systemInfo4")
+	fd_GenesisState_tradeList = md_GenesisState.Fields().ByName("tradeList")
 }
 
 var _ protoreflect.Message = (*fastReflection_GenesisState)(nil)
@@ -97,6 +316,54 @@ func (x *fastReflection_GenesisState) Range(f func(protoreflect.FieldDescriptor,
 			return
 		}
 	}
+	if x.SystemInfo1 != nil {
+		value := protoreflect.ValueOfMessage(x.SystemInfo1.ProtoReflect())
+		if !f(fd_GenesisState_systemInfo1, value) {
+			return
+		}
+	}
+	if x.SystemInfo2 != nil {
+		value := protoreflect.ValueOfMessage(x.SystemInfo2.ProtoReflect())
+		if !f(fd_GenesisState_systemInfo2, value) {
+			return
+		}
+	}
+	if x.SystemInfo3 != nil {
+		value := protoreflect.ValueOfMessage(x.SystemInfo3.ProtoReflect())
+		if !f(fd_GenesisState_systemInfo3, value) {
+			return
+		}
+	}
+	if len(x.VendorList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_5_list{list: &x.VendorList})
+		if !f(fd_GenesisState_vendorList, value) {
+			return
+		}
+	}
+	if len(x.PurchaserList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_6_list{list: &x.PurchaserList})
+		if !f(fd_GenesisState_purchaserList, value) {
+			return
+		}
+	}
+	if len(x.TransporterList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_7_list{list: &x.TransporterList})
+		if !f(fd_GenesisState_transporterList, value) {
+			return
+		}
+	}
+	if x.SystemInfo4 != nil {
+		value := protoreflect.ValueOfMessage(x.SystemInfo4.ProtoReflect())
+		if !f(fd_GenesisState_systemInfo4, value) {
+			return
+		}
+	}
+	if len(x.TradeList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_9_list{list: &x.TradeList})
+		if !f(fd_GenesisState_tradeList, value) {
+			return
+		}
+	}
 }
 
 // Has reports whether a field is populated.
@@ -114,6 +381,22 @@ func (x *fastReflection_GenesisState) Has(fd protoreflect.FieldDescriptor) bool 
 	switch fd.FullName() {
 	case "logisticsbeta.logisticsbeta.GenesisState.params":
 		return x.Params != nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		return x.SystemInfo1 != nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		return x.SystemInfo2 != nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		return x.SystemInfo3 != nil
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		return len(x.VendorList) != 0
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		return len(x.PurchaserList) != 0
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		return len(x.TransporterList) != 0
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		return x.SystemInfo4 != nil
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		return len(x.TradeList) != 0
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -132,6 +415,22 @@ func (x *fastReflection_GenesisState) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	case "logisticsbeta.logisticsbeta.GenesisState.params":
 		x.Params = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		x.SystemInfo1 = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		x.SystemInfo2 = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		x.SystemInfo3 = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		x.VendorList = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		x.PurchaserList = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		x.TransporterList = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		x.SystemInfo4 = nil
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		x.TradeList = nil
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -151,6 +450,42 @@ func (x *fastReflection_GenesisState) Get(descriptor protoreflect.FieldDescripto
 	case "logisticsbeta.logisticsbeta.GenesisState.params":
 		value := x.Params
 		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		value := x.SystemInfo1
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		value := x.SystemInfo2
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		value := x.SystemInfo3
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		if len(x.VendorList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_5_list{})
+		}
+		listValue := &_GenesisState_5_list{list: &x.VendorList}
+		return protoreflect.ValueOfList(listValue)
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		if len(x.PurchaserList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_6_list{})
+		}
+		listValue := &_GenesisState_6_list{list: &x.PurchaserList}
+		return protoreflect.ValueOfList(listValue)
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		if len(x.TransporterList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_7_list{})
+		}
+		listValue := &_GenesisState_7_list{list: &x.TransporterList}
+		return protoreflect.ValueOfList(listValue)
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		value := x.SystemInfo4
+		return protoreflect.ValueOfMessage(value.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		if len(x.TradeList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_9_list{})
+		}
+		listValue := &_GenesisState_9_list{list: &x.TradeList}
+		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -173,6 +508,30 @@ func (x *fastReflection_GenesisState) Set(fd protoreflect.FieldDescriptor, value
 	switch fd.FullName() {
 	case "logisticsbeta.logisticsbeta.GenesisState.params":
 		x.Params = value.Message().Interface().(*Params)
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		x.SystemInfo1 = value.Message().Interface().(*SystemInfo1)
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		x.SystemInfo2 = value.Message().Interface().(*SystemInfo2)
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		x.SystemInfo3 = value.Message().Interface().(*SystemInfo3)
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_5_list)
+		x.VendorList = *clv.list
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_6_list)
+		x.PurchaserList = *clv.list
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_7_list)
+		x.TransporterList = *clv.list
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		x.SystemInfo4 = value.Message().Interface().(*SystemInfo4)
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_9_list)
+		x.TradeList = *clv.list
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -198,6 +557,50 @@ func (x *fastReflection_GenesisState) Mutable(fd protoreflect.FieldDescriptor) p
 			x.Params = new(Params)
 		}
 		return protoreflect.ValueOfMessage(x.Params.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		if x.SystemInfo1 == nil {
+			x.SystemInfo1 = new(SystemInfo1)
+		}
+		return protoreflect.ValueOfMessage(x.SystemInfo1.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		if x.SystemInfo2 == nil {
+			x.SystemInfo2 = new(SystemInfo2)
+		}
+		return protoreflect.ValueOfMessage(x.SystemInfo2.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		if x.SystemInfo3 == nil {
+			x.SystemInfo3 = new(SystemInfo3)
+		}
+		return protoreflect.ValueOfMessage(x.SystemInfo3.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		if x.VendorList == nil {
+			x.VendorList = []*Vendor{}
+		}
+		value := &_GenesisState_5_list{list: &x.VendorList}
+		return protoreflect.ValueOfList(value)
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		if x.PurchaserList == nil {
+			x.PurchaserList = []*Purchaser{}
+		}
+		value := &_GenesisState_6_list{list: &x.PurchaserList}
+		return protoreflect.ValueOfList(value)
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		if x.TransporterList == nil {
+			x.TransporterList = []*Transporter{}
+		}
+		value := &_GenesisState_7_list{list: &x.TransporterList}
+		return protoreflect.ValueOfList(value)
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		if x.SystemInfo4 == nil {
+			x.SystemInfo4 = new(SystemInfo4)
+		}
+		return protoreflect.ValueOfMessage(x.SystemInfo4.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		if x.TradeList == nil {
+			x.TradeList = []*Trade{}
+		}
+		value := &_GenesisState_9_list{list: &x.TradeList}
+		return protoreflect.ValueOfList(value)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -214,6 +617,30 @@ func (x *fastReflection_GenesisState) NewField(fd protoreflect.FieldDescriptor) 
 	case "logisticsbeta.logisticsbeta.GenesisState.params":
 		m := new(Params)
 		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo1":
+		m := new(SystemInfo1)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo2":
+		m := new(SystemInfo2)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo3":
+		m := new(SystemInfo3)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.vendorList":
+		list := []*Vendor{}
+		return protoreflect.ValueOfList(&_GenesisState_5_list{list: &list})
+	case "logisticsbeta.logisticsbeta.GenesisState.purchaserList":
+		list := []*Purchaser{}
+		return protoreflect.ValueOfList(&_GenesisState_6_list{list: &list})
+	case "logisticsbeta.logisticsbeta.GenesisState.transporterList":
+		list := []*Transporter{}
+		return protoreflect.ValueOfList(&_GenesisState_7_list{list: &list})
+	case "logisticsbeta.logisticsbeta.GenesisState.systemInfo4":
+		m := new(SystemInfo4)
+		return protoreflect.ValueOfMessage(m.ProtoReflect())
+	case "logisticsbeta.logisticsbeta.GenesisState.tradeList":
+		list := []*Trade{}
+		return protoreflect.ValueOfList(&_GenesisState_9_list{list: &list})
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: logisticsbeta.logisticsbeta.GenesisState"))
@@ -287,6 +714,46 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 			l = options.Size(x.Params)
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
+		if x.SystemInfo1 != nil {
+			l = options.Size(x.SystemInfo1)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.SystemInfo2 != nil {
+			l = options.Size(x.SystemInfo2)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.SystemInfo3 != nil {
+			l = options.Size(x.SystemInfo3)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if len(x.VendorList) > 0 {
+			for _, e := range x.VendorList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.PurchaserList) > 0 {
+			for _, e := range x.PurchaserList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.TransporterList) > 0 {
+			for _, e := range x.TransporterList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.SystemInfo4 != nil {
+			l = options.Size(x.SystemInfo4)
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if len(x.TradeList) > 0 {
+			for _, e := range x.TradeList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
 		}
@@ -315,6 +782,126 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if x.unknownFields != nil {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.TradeList) > 0 {
+			for iNdEx := len(x.TradeList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.TradeList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x4a
+			}
+		}
+		if x.SystemInfo4 != nil {
+			encoded, err := options.Marshal(x.SystemInfo4)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0x42
+		}
+		if len(x.TransporterList) > 0 {
+			for iNdEx := len(x.TransporterList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.TransporterList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x3a
+			}
+		}
+		if len(x.PurchaserList) > 0 {
+			for iNdEx := len(x.PurchaserList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.PurchaserList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x32
+			}
+		}
+		if len(x.VendorList) > 0 {
+			for iNdEx := len(x.VendorList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.VendorList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x2a
+			}
+		}
+		if x.SystemInfo3 != nil {
+			encoded, err := options.Marshal(x.SystemInfo3)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0x22
+		}
+		if x.SystemInfo2 != nil {
+			encoded, err := options.Marshal(x.SystemInfo2)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if x.SystemInfo1 != nil {
+			encoded, err := options.Marshal(x.SystemInfo1)
+			if err != nil {
+				return protoiface.MarshalOutput{
+					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+					Buf:               input.Buf,
+				}, err
+			}
+			i -= len(encoded)
+			copy(dAtA[i:], encoded)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+			i--
+			dAtA[i] = 0x12
 		}
 		if x.Params != nil {
 			encoded, err := options.Marshal(x.Params)
@@ -415,6 +1002,286 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SystemInfo1", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.SystemInfo1 == nil {
+					x.SystemInfo1 = &SystemInfo1{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.SystemInfo1); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SystemInfo2", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.SystemInfo2 == nil {
+					x.SystemInfo2 = &SystemInfo2{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.SystemInfo2); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SystemInfo3", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.SystemInfo3 == nil {
+					x.SystemInfo3 = &SystemInfo3{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.SystemInfo3); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 5:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field VendorList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.VendorList = append(x.VendorList, &Vendor{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.VendorList[len(x.VendorList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 6:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field PurchaserList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.PurchaserList = append(x.PurchaserList, &Purchaser{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.PurchaserList[len(x.PurchaserList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 7:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TransporterList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.TransporterList = append(x.TransporterList, &Transporter{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.TransporterList[len(x.TransporterList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 8:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SystemInfo4", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if x.SystemInfo4 == nil {
+					x.SystemInfo4 = &SystemInfo4{}
+				}
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.SystemInfo4); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 9:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TradeList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.TradeList = append(x.TradeList, &Trade{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.TradeList[len(x.TradeList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -470,7 +1337,15 @@ type GenesisState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// params defines all the parameters of the module.
-	Params *Params `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	Params          *Params        `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	SystemInfo1     *SystemInfo1   `protobuf:"bytes,2,opt,name=systemInfo1,proto3" json:"systemInfo1,omitempty"`
+	SystemInfo2     *SystemInfo2   `protobuf:"bytes,3,opt,name=systemInfo2,proto3" json:"systemInfo2,omitempty"`
+	SystemInfo3     *SystemInfo3   `protobuf:"bytes,4,opt,name=systemInfo3,proto3" json:"systemInfo3,omitempty"`
+	VendorList      []*Vendor      `protobuf:"bytes,5,rep,name=vendorList,proto3" json:"vendorList,omitempty"`
+	PurchaserList   []*Purchaser   `protobuf:"bytes,6,rep,name=purchaserList,proto3" json:"purchaserList,omitempty"`
+	TransporterList []*Transporter `protobuf:"bytes,7,rep,name=transporterList,proto3" json:"transporterList,omitempty"`
+	SystemInfo4     *SystemInfo4   `protobuf:"bytes,8,opt,name=systemInfo4,proto3" json:"systemInfo4,omitempty"`
+	TradeList       []*Trade       `protobuf:"bytes,9,rep,name=tradeList,proto3" json:"tradeList,omitempty"`
 }
 
 func (x *GenesisState) Reset() {
@@ -500,6 +1375,62 @@ func (x *GenesisState) GetParams() *Params {
 	return nil
 }
 
+func (x *GenesisState) GetSystemInfo1() *SystemInfo1 {
+	if x != nil {
+		return x.SystemInfo1
+	}
+	return nil
+}
+
+func (x *GenesisState) GetSystemInfo2() *SystemInfo2 {
+	if x != nil {
+		return x.SystemInfo2
+	}
+	return nil
+}
+
+func (x *GenesisState) GetSystemInfo3() *SystemInfo3 {
+	if x != nil {
+		return x.SystemInfo3
+	}
+	return nil
+}
+
+func (x *GenesisState) GetVendorList() []*Vendor {
+	if x != nil {
+		return x.VendorList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetPurchaserList() []*Purchaser {
+	if x != nil {
+		return x.PurchaserList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetTransporterList() []*Transporter {
+	if x != nil {
+		return x.TransporterList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetSystemInfo4() *SystemInfo4 {
+	if x != nil {
+		return x.SystemInfo4
+	}
+	return nil
+}
+
+func (x *GenesisState) GetTradeList() []*Trade {
+	if x != nil {
+		return x.TradeList
+	}
+	return nil
+}
+
 var File_logisticsbeta_logisticsbeta_genesis_proto protoreflect.FileDescriptor
 
 var file_logisticsbeta_logisticsbeta_genesis_proto_rawDesc = []byte{
@@ -512,28 +1443,92 @@ var file_logisticsbeta_logisticsbeta_genesis_proto_rawDesc = []byte{
 	0x6f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67, 0x6f, 0x67, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x28, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61,
 	0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x70,
-	0x61, 0x72, 0x61, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x56, 0x0a, 0x0c, 0x47,
-	0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x46, 0x0a, 0x06, 0x70,
-	0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x6c, 0x6f,
-	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69,
-	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52, 0x06, 0x70, 0x61, 0x72,
-	0x61, 0x6d, 0x73, 0x42, 0xea, 0x01, 0x0a, 0x1f, 0x63, 0x6f, 0x6d, 0x2e, 0x6c, 0x6f, 0x67, 0x69,
-	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74,
-	0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73,
-	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x73,
-	0x64, 0x6b, 0x2e, 0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2f, 0x6c, 0x6f, 0x67,
+	0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73,
+	0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f,
+	0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x31, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2f, 0x6c, 0x6f,
+	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69,
+	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x32, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2f, 0x6c,
+	0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67,
+	0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x33, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x28,
+	0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f,
+	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x76, 0x65, 0x6e, 0x64,
+	0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2b, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74,
 	0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63,
-	0x73, 0x62, 0x65, 0x74, 0x61, 0xa2, 0x02, 0x03, 0x4c, 0x4c, 0x58, 0xaa, 0x02, 0x1b, 0x4c, 0x6f,
-	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x4c, 0x6f, 0x67, 0x69,
-	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0xca, 0x02, 0x1b, 0x4c, 0x6f, 0x67, 0x69,
-	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x5c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74,
-	0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0xe2, 0x02, 0x27, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74,
-	0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x5c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63,
-	0x73, 0x62, 0x65, 0x74, 0x61, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74,
-	0x61, 0xea, 0x02, 0x1c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74,
-	0x61, 0x3a, 0x3a, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x62, 0x65, 0x74, 0x61, 0x2f, 0x70, 0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x72, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2d, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65,
+	0x74, 0x61, 0x2f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x65, 0x72, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62,
+	0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74,
+	0x61, 0x2f, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x34, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x27, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65,
+	0x74, 0x61, 0x2f, 0x74, 0x72, 0x61, 0x64, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xdf,
+	0x05, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12,
+	0x46, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x23, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e,
+	0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x73, 0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52,
+	0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x50, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x31, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c,
+	0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67,
+	0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65,
+	0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x31, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x79,
+	0x73, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x31, 0x12, 0x50, 0x0a, 0x0b, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28,
+	0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c,
+	0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x53, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0b,
+	0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x32, 0x12, 0x50, 0x0a, 0x0b, 0x73,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x33, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x28, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61,
+	0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x53,
+	0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x33, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00,
+	0x52, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x33, 0x12, 0x49, 0x0a,
+	0x0a, 0x76, 0x65, 0x6e, 0x64, 0x6f, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x05, 0x20, 0x03, 0x28,
+	0x0b, 0x32, 0x23, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74,
+	0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e,
+	0x56, 0x65, 0x6e, 0x64, 0x6f, 0x72, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0a, 0x76, 0x65,
+	0x6e, 0x64, 0x6f, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x52, 0x0a, 0x0d, 0x70, 0x75, 0x72, 0x63,
+	0x68, 0x61, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x06, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x26, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e,
+	0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x50, 0x75,
+	0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x72, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0d, 0x70,
+	0x75, 0x72, 0x63, 0x68, 0x61, 0x73, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x58, 0x0a, 0x0f,
+	0x74, 0x72, 0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x18,
+	0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63,
+	0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62,
+	0x65, 0x74, 0x61, 0x2e, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74, 0x65, 0x72, 0x42,
+	0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x70, 0x6f, 0x72, 0x74,
+	0x65, 0x72, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x50, 0x0a, 0x0b, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x49, 0x6e, 0x66, 0x6f, 0x34, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c, 0x6f,
+	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69,
+	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
+	0x49, 0x6e, 0x66, 0x6f, 0x34, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x0b, 0x73, 0x79, 0x73,
+	0x74, 0x65, 0x6d, 0x49, 0x6e, 0x66, 0x6f, 0x34, 0x12, 0x46, 0x0a, 0x09, 0x74, 0x72, 0x61, 0x64,
+	0x65, 0x4c, 0x69, 0x73, 0x74, 0x18, 0x09, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x6f,
+	0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69,
+	0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x54, 0x72, 0x61, 0x64, 0x65, 0x42,
+	0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x09, 0x74, 0x72, 0x61, 0x64, 0x65, 0x4c, 0x69, 0x73, 0x74,
+	0x42, 0xea, 0x01, 0x0a, 0x1f, 0x63, 0x6f, 0x6d, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69,
+	0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x50, 0x72, 0x6f,
+	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2c, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x73, 0x64, 0x6b, 0x2e,
+	0x69, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0x2f, 0x6c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65,
+	0x74, 0x61, 0xa2, 0x02, 0x03, 0x4c, 0x4c, 0x58, 0xaa, 0x02, 0x1b, 0x4c, 0x6f, 0x67, 0x69, 0x73,
+	0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x2e, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69,
+	0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0xca, 0x02, 0x1b, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69,
+	0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x5c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0xe2, 0x02, 0x27, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73,
+	0x62, 0x65, 0x74, 0x61, 0x5c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65,
+	0x74, 0x61, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02,
+	0x1c, 0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x3a, 0x3a,
+	0x4c, 0x6f, 0x67, 0x69, 0x73, 0x74, 0x69, 0x63, 0x73, 0x62, 0x65, 0x74, 0x61, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -552,14 +1547,30 @@ var file_logisticsbeta_logisticsbeta_genesis_proto_msgTypes = make([]protoimpl.M
 var file_logisticsbeta_logisticsbeta_genesis_proto_goTypes = []interface{}{
 	(*GenesisState)(nil), // 0: logisticsbeta.logisticsbeta.GenesisState
 	(*Params)(nil),       // 1: logisticsbeta.logisticsbeta.Params
+	(*SystemInfo1)(nil),  // 2: logisticsbeta.logisticsbeta.SystemInfo1
+	(*SystemInfo2)(nil),  // 3: logisticsbeta.logisticsbeta.SystemInfo2
+	(*SystemInfo3)(nil),  // 4: logisticsbeta.logisticsbeta.SystemInfo3
+	(*Vendor)(nil),       // 5: logisticsbeta.logisticsbeta.Vendor
+	(*Purchaser)(nil),    // 6: logisticsbeta.logisticsbeta.Purchaser
+	(*Transporter)(nil),  // 7: logisticsbeta.logisticsbeta.Transporter
+	(*SystemInfo4)(nil),  // 8: logisticsbeta.logisticsbeta.SystemInfo4
+	(*Trade)(nil),        // 9: logisticsbeta.logisticsbeta.Trade
 }
 var file_logisticsbeta_logisticsbeta_genesis_proto_depIdxs = []int32{
 	1, // 0: logisticsbeta.logisticsbeta.GenesisState.params:type_name -> logisticsbeta.logisticsbeta.Params
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 1: logisticsbeta.logisticsbeta.GenesisState.systemInfo1:type_name -> logisticsbeta.logisticsbeta.SystemInfo1
+	3, // 2: logisticsbeta.logisticsbeta.GenesisState.systemInfo2:type_name -> logisticsbeta.logisticsbeta.SystemInfo2
+	4, // 3: logisticsbeta.logisticsbeta.GenesisState.systemInfo3:type_name -> logisticsbeta.logisticsbeta.SystemInfo3
+	5, // 4: logisticsbeta.logisticsbeta.GenesisState.vendorList:type_name -> logisticsbeta.logisticsbeta.Vendor
+	6, // 5: logisticsbeta.logisticsbeta.GenesisState.purchaserList:type_name -> logisticsbeta.logisticsbeta.Purchaser
+	7, // 6: logisticsbeta.logisticsbeta.GenesisState.transporterList:type_name -> logisticsbeta.logisticsbeta.Transporter
+	8, // 7: logisticsbeta.logisticsbeta.GenesisState.systemInfo4:type_name -> logisticsbeta.logisticsbeta.SystemInfo4
+	9, // 8: logisticsbeta.logisticsbeta.GenesisState.tradeList:type_name -> logisticsbeta.logisticsbeta.Trade
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_logisticsbeta_logisticsbeta_genesis_proto_init() }
@@ -568,6 +1579,14 @@ func file_logisticsbeta_logisticsbeta_genesis_proto_init() {
 		return
 	}
 	file_logisticsbeta_logisticsbeta_params_proto_init()
+	file_logisticsbeta_logisticsbeta_system_info_1_proto_init()
+	file_logisticsbeta_logisticsbeta_system_info_2_proto_init()
+	file_logisticsbeta_logisticsbeta_system_info_3_proto_init()
+	file_logisticsbeta_logisticsbeta_vendor_proto_init()
+	file_logisticsbeta_logisticsbeta_purchaser_proto_init()
+	file_logisticsbeta_logisticsbeta_transporter_proto_init()
+	file_logisticsbeta_logisticsbeta_system_info_4_proto_init()
+	file_logisticsbeta_logisticsbeta_trade_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_logisticsbeta_logisticsbeta_genesis_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenesisState); i {

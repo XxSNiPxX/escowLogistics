@@ -1,0 +1,78 @@
+ignite scaffold single systemInfo1 next_purchaser:uint --module logisticsBeta --no-message
+ignite scaffold single systemInfo2 next_vendor:uint --module logisticsBeta --no-message
+ignite scaffold single systemInfo3 next_transporter:uint --module logisticsBeta --no-message
+ignite scaffold map Vendor name commodity location wallet_id offchain_id --index vendorid --module logisticsBeta --no-message
+ignite scaffold map Purchaser active location wallet_id offchain_id --index purchaserid --module logisticsBeta --no-message
+ignite scaffold map Transporter active wallet_id offchain_id --index transporterid --module logisticsBeta --no-message
+ignite scaffold message createVendor name offchainid  --module logisticsBeta --response vendorIndex
+ignite scaffold message createPurchaser offchainid      --module logisticsBeta     --response purchaserIndex
+ignite scaffold message createTransporter offchainid      --module logisticsBeta     --response transporterIndex
+ignite scaffold message createTrade purchaserid:uint vendorid:uint commodity purchaserlocation vendorlocation commodityprice:uint transportprice:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold map Trade trade_state purchaser_id:uint vendor_id:uint transport_id:uint commodity purchaser_location vendor_location commodity_price:uint transport_price:uint vendor_trade_pending:bool vendor_trade_accepted:bool vendor_trade_rejected:bool vendor_commodity_dispatched:bool transporter_trade_pending:bool transporter_trade_accepted:bool transporter_trade_rejected:bool transporter_vendor_reached:bool transporter_commodity_collected:bool transporter_purchaser_reached:bool transporter_commodity_distributed:bool  --index tradeid --module logisticsBeta --no-message
+
+ignite scaffold message createVendorTradeAccept tradeid:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold message createVendorTradeReject tradeid:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold message createTransporterTradeAccepted tradeid:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold message createTransporterTradeRejected tradeid:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold message createTransporterVendorReached tradeid:uint  --module logisticsBeta --response tradeIndex
+
+ignite scaffold message createTransporterPurchaserReached tradeid:uint  --module logisticsBeta --response tradeIndex
+
+///run in sudo
+
+./logisticsBetad tx logisticsbeta create-transporter hello --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+./logisticsBetad tx logisticsbeta create-purchaser hello --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+./logisticsBetad tx logisticsbeta create-trade 1 1 hello hello hello 50 20 --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+
+./logisticsBetad tx logisticsbeta create-vendor-trade-accept 1  --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+./logisticsBetad tx logisticsbeta create-transporter-trade-accept 1  --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+./logisticsBetad tx logisticsbeta create-transporter-vendor-reached 1  --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+./logisticsBetad tx logisticsbeta create-transporter-vendor-reached 1  --from alice --keyring-backend test --keyring-dir /root/.logisticsBeta --chain-id logisticsBeta
+
+
+./logisticsBetad query logisticsbeta list-vendor --chain-id logisticsBeta
+./logisticsBetad query logisticsbeta list-purchaser --chain-id logisticsBeta
+./logisticsBetad query logisticsbeta list-transporter --chain-id logisticsBeta
+./logisticsBetad query logisticsbeta list-trade --chain-id logisticsBeta
+
+./logisticsBetad query bank balances alice --chain-id logisticsBeta
+
+
+
+curl -X POST "http://localhost:8008/_matrix/client/v3/register?kind=user" \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d '{"device_id":"","inhibit_login":false,"initial_device_display_name":"","password":"ilovebananas","refresh_token":false,"username":"cheeky_monkey"}' \
+ 
+ 
+ curl -X POST "http://localhost:8008/_matrix/client/v3/register?kind=user" \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d '{"auth":{"type":"m.login.recaptcha","response":"03AFcWeA4r4gCinF-nRTGQrXU_iSZsDn2TOqPkvAXLnEd8VJNrFjpi643LPlzq6oqeuuYqW4b16Ot7qhVvXmki4j3z03gmrWtnGIWFBnU_CFaqqnQGz2II8EqkzqZ9gJQ5oqmS3krMjNW97No9B1ukOPCPzTA9Kdkb0-UEQOkm3YHtPCnE1MstKNZKdbU-PfmiowjTBb8uP1rQMX7aQhZTCGAUpdUwvyvyrBOwFAL_z-h924cUp4VAjiKYQHwXgyN5xwYc5668hFLJ6b36hBiuWLzeMvuz4UnhLreHHQneotvFPohvnTGNIA5ytrkbk15hULFjn_naR5dq5L_-vtYLRPh6ovo7Rtyrt0460AGQJ2ptWwWkn1_2felX_Atabuh6cCDc1bKm8lusv09j8r-42W_1tTPCbVSoiPiVg8WvK7nOLX2BI3EQBgkpCyTYsVa6qC-oCxn2MvEGKzKyVtAtpBMzeDxmzvAMUBLw0b4TSwiIoAW5oMN2LuKMUQ0PpRbO7gake7hnJv8Ltrd40gwMlKvcYJ1D1tbwnoaNzQJYUtASbZVBED1vqsIiC6d0aQFD8yyRQGbcfn0ai5-ozhoczXEATkmrRg6tVe7PitRle3m06wBk6br5nnyv0N1t8w4IfFPyYW3e4MXHNFnD0ev-_vZASrc_qDmZake59tnCDn-l6wMcjH7ob3d0jIAWHC9Ce-qCe0ad7ljs8KOaF3TgYVtlpw2LEUb5KSDO6NmzsknvhpqERhhW8BTi6R0kUoXhH8GCl4ljI9qmJDIiPMGWBrsIJNjaWdq5mBpuLOitzshT6likH8iMkgmcNtju70ea-2rEov_i0_5opAOIV1oUAp1C72SqU8X1fmUtmpeKSZwq9BOVoOgq1oAL5jNqSI4pBmjv0fK1i0LjrzwdiSLr1Wk4ru0UjWgxEt6uEL9eXg0_VxMENKqnVCG9eE6IRs0cBwq_COX5MqjvOegGZxUIIOOiQT1f0dtS3Pa0cSIdImzyCoJv_3hhCaulCM14WcI34w4hZci8gK1D7Vnr8gQ80uUqtcvSgYIjmNy2ubg9qL1LCWTTKRZhKAZ9Kdz35jT79JyjbtNxdVwICj-kCAIVpJTG7X31Nbigzv9SNfHf03HjpY0ZFPkNRiTRpRlMKyfNbmHCABomaR2IxUPhSOkgynPLJJncGACAt_eaIyAe0HDRSbmiKxArOqam1x3ZswgX_CchqQM9PRN1ovneDKRE_hx4Y1Z46eNAK8lf5G06Bq0zJFhXMsBYo-k1atR_z4bC8sPnLteL31ExX71B7fBOZ3ejr8Q95_dS7R_3Mvj9ssIoNSRxNnVAodx5OvMf09d5n1lg-9lhrH0sBj86DyYu_k9ChfgPA6SOJxshLUbxIWhMxKFyABUdQGeNiFbwhL52bzbdCA5FH5Rs7JWwvEYXo9W9yVQd8m4WUL-7MUL_gFE9UkCWNdH97Pn6xSUQ9_z7cv9WBbMHW3225XWTvVCtQWhBa8o2rBpIUsCk8uYl8pwAtNzYEnbEmXv-G5-c8xBCWpqfG70C8ISZjyp9Rwxg9sa-iYqKeeFO6D2Tnh5iGgs6pMjOpBQCpiuJU4wc-EEzSVakauTsRNNs4Rx23Px32YtRTMMY38LiKDQnK-3j5c0wnpTwgICUf2lkUZzBFHvrhtMHKmBBRp05","session":"qtAeMJrxZYRsIVyluUDzYjoN"},"session":"qtAeMJrxZYRsIVyluUDzYjoN","device_id":"GHTYAJCE","inhibit_login":true,"initial_device_display_name":"Jungle Phone","password":"ilovebananas","refresh_token":false,"username":"cheeky_monkey"}' \
+ 
+ curl -X POST "http://localhost:8008/_matrix/client/v3/register?kind=user" \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d '{"auth":{"type":"m.login.dummy","session":"qtAeMJrxZYRsIVyluUDzYjoN"},"session_id":"qtAeMJrxZYRsIVyluUDzYjoN","device_id":"GHTYAJCE","inhibit_login":false,"initial_device_display_name":"Jungle Phone","password":"ilovebananas","refresh_token":false,"username":"cheeky_monkey"}'
+ 
+ 
+ 
+ curl -X POST "http://localhost:8008/_matrix/client/v3/login" \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "m.login.password",
+    "user": "cheeky_monkey",
+    "password": "ilovebananas"
+  }'
+  
+  
+  
+  e42591b05bf612a21eee9166fc362adb2dae2a29949ab1e9fb34fb406a5dac8e (passphrase for keplr wallet)
+
+

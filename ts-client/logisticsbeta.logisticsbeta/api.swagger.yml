@@ -1,0 +1,1276 @@
+swagger: '2.0'
+info:
+  title: HTTP API Console logisticsbeta.logisticsbeta
+  name: ''
+  description: ''
+paths:
+  /XxSNiPxX/logisticsBeta/logisticsbeta/params:
+    get:
+      operationId: Query_Params
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                type: object
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/purchaser:
+    get:
+      operationId: Query_PurchaserAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              purchaser:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    purchaserid:
+                      type: string
+                    active:
+                      type: string
+                    location:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                  total:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/purchaser/{purchaserid}:
+    get:
+      operationId: Query_Purchaser
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              purchaser:
+                type: object
+                properties:
+                  purchaserid:
+                    type: string
+                  active:
+                    type: string
+                  location:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: purchaserid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_1:
+    get:
+      operationId: Query_SystemInfo1
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo1:
+                type: object
+                properties:
+                  nextPurchaser:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_2:
+    get:
+      operationId: Query_SystemInfo2
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo2:
+                type: object
+                properties:
+                  nextVendor:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_3:
+    get:
+      operationId: Query_SystemInfo3
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo3:
+                type: object
+                properties:
+                  nextTransporter:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_4:
+    get:
+      operationId: Query_SystemInfo4
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo4:
+                type: object
+                properties:
+                  nextTrade:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/trade:
+    get:
+      operationId: Query_TradeAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              trade:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    tradeid:
+                      type: string
+                    tradeState:
+                      type: string
+                    purchaserId:
+                      type: string
+                      format: uint64
+                    vendorId:
+                      type: string
+                      format: uint64
+                    transportId:
+                      type: string
+                      format: uint64
+                    commodity:
+                      type: string
+                    purchaserLocation:
+                      type: string
+                    vendorLocation:
+                      type: string
+                    commodityPrice:
+                      type: string
+                      format: uint64
+                    transportPrice:
+                      type: string
+                      format: uint64
+                    vendorTradePending:
+                      type: boolean
+                    vendorTradeAccepted:
+                      type: boolean
+                    vendorTradeRejected:
+                      type: boolean
+                    vendorCommodityDispatched:
+                      type: boolean
+                    transporterTradePending:
+                      type: boolean
+                    transporterTradeAccepted:
+                      type: boolean
+                    transporterTradeRejected:
+                      type: boolean
+                    transporterVendorReached:
+                      type: boolean
+                    transporterCommodityCollected:
+                      type: boolean
+                    transporterPurchaserReached:
+                      type: boolean
+                    transporterCommodityDistributed:
+                      type: boolean
+                    deadline:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                  total:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/trade/{tradeid}:
+    get:
+      operationId: Query_Trade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              trade:
+                type: object
+                properties:
+                  tradeid:
+                    type: string
+                  tradeState:
+                    type: string
+                  purchaserId:
+                    type: string
+                    format: uint64
+                  vendorId:
+                    type: string
+                    format: uint64
+                  transportId:
+                    type: string
+                    format: uint64
+                  commodity:
+                    type: string
+                  purchaserLocation:
+                    type: string
+                  vendorLocation:
+                    type: string
+                  commodityPrice:
+                    type: string
+                    format: uint64
+                  transportPrice:
+                    type: string
+                    format: uint64
+                  vendorTradePending:
+                    type: boolean
+                  vendorTradeAccepted:
+                    type: boolean
+                  vendorTradeRejected:
+                    type: boolean
+                  vendorCommodityDispatched:
+                    type: boolean
+                  transporterTradePending:
+                    type: boolean
+                  transporterTradeAccepted:
+                    type: boolean
+                  transporterTradeRejected:
+                    type: boolean
+                  transporterVendorReached:
+                    type: boolean
+                  transporterCommodityCollected:
+                    type: boolean
+                  transporterPurchaserReached:
+                    type: boolean
+                  transporterCommodityDistributed:
+                    type: boolean
+                  deadline:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: tradeid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/transporter:
+    get:
+      operationId: Query_TransporterAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              transporter:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    transporterid:
+                      type: string
+                    active:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+                    escrowed:
+                      type: string
+                      format: uint64
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                  total:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/transporter/{transporterid}:
+    get:
+      operationId: Query_Transporter
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              transporter:
+                type: object
+                properties:
+                  transporterid:
+                    type: string
+                  active:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+                  escrowed:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: transporterid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/vendor:
+    get:
+      operationId: Query_VendorAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              vendor:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    vendorid:
+                      type: string
+                    name:
+                      type: string
+                    commodity:
+                      type: string
+                    location:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                  total:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/vendor/{vendorid}:
+    get:
+      operationId: Query_Vendor
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              vendor:
+                type: object
+                properties:
+                  vendorid:
+                    type: string
+                  name:
+                    type: string
+                  commodity:
+                    type: string
+                  location:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: vendorid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+definitions:
+  Any:
+    type: object
+    properties:
+      '@type':
+        type: string
+    additionalProperties: {}
+  Status:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          type: object
+          properties:
+            '@type':
+              type: string
+          additionalProperties: {}
+  PageRequest:
+    type: object
+    properties:
+      key:
+        type: string
+        format: byte
+      offset:
+        type: string
+        format: uint64
+      limit:
+        type: string
+        format: uint64
+      count_total:
+        type: boolean
+      reverse:
+        type: boolean
+  PageResponse:
+    type: object
+    properties:
+      next_key:
+        type: string
+        format: byte
+      total:
+        type: string
+        format: uint64
+  QueryAllPurchaserResponse:
+    type: object
+    properties:
+      purchaser:
+        type: array
+        items:
+          type: object
+          properties:
+            purchaserid:
+              type: string
+            active:
+              type: string
+            location:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+          total:
+            type: string
+            format: uint64
+  QueryAllTradeResponse:
+    type: object
+    properties:
+      trade:
+        type: array
+        items:
+          type: object
+          properties:
+            tradeid:
+              type: string
+            tradeState:
+              type: string
+            purchaserId:
+              type: string
+              format: uint64
+            vendorId:
+              type: string
+              format: uint64
+            transportId:
+              type: string
+              format: uint64
+            commodity:
+              type: string
+            purchaserLocation:
+              type: string
+            vendorLocation:
+              type: string
+            commodityPrice:
+              type: string
+              format: uint64
+            transportPrice:
+              type: string
+              format: uint64
+            vendorTradePending:
+              type: boolean
+            vendorTradeAccepted:
+              type: boolean
+            vendorTradeRejected:
+              type: boolean
+            vendorCommodityDispatched:
+              type: boolean
+            transporterTradePending:
+              type: boolean
+            transporterTradeAccepted:
+              type: boolean
+            transporterTradeRejected:
+              type: boolean
+            transporterVendorReached:
+              type: boolean
+            transporterCommodityCollected:
+              type: boolean
+            transporterPurchaserReached:
+              type: boolean
+            transporterCommodityDistributed:
+              type: boolean
+            deadline:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+          total:
+            type: string
+            format: uint64
+  QueryAllTransporterResponse:
+    type: object
+    properties:
+      transporter:
+        type: array
+        items:
+          type: object
+          properties:
+            transporterid:
+              type: string
+            active:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+            escrowed:
+              type: string
+              format: uint64
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+          total:
+            type: string
+            format: uint64
+  QueryAllVendorResponse:
+    type: object
+    properties:
+      vendor:
+        type: array
+        items:
+          type: object
+          properties:
+            vendorid:
+              type: string
+            name:
+              type: string
+            commodity:
+              type: string
+            location:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+          total:
+            type: string
+            format: uint64
+  QueryGetPurchaserResponse:
+    type: object
+    properties:
+      purchaser:
+        type: object
+        properties:
+          purchaserid:
+            type: string
+          active:
+            type: string
+          location:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
+  QueryGetSystemInfo1Response:
+    type: object
+    properties:
+      SystemInfo1:
+        type: object
+        properties:
+          nextPurchaser:
+            type: string
+            format: uint64
+  QueryGetSystemInfo2Response:
+    type: object
+    properties:
+      SystemInfo2:
+        type: object
+        properties:
+          nextVendor:
+            type: string
+            format: uint64
+  QueryGetSystemInfo3Response:
+    type: object
+    properties:
+      SystemInfo3:
+        type: object
+        properties:
+          nextTransporter:
+            type: string
+            format: uint64
+  QueryGetSystemInfo4Response:
+    type: object
+    properties:
+      SystemInfo4:
+        type: object
+        properties:
+          nextTrade:
+            type: string
+            format: uint64
+  QueryGetTradeResponse:
+    type: object
+    properties:
+      trade:
+        type: object
+        properties:
+          tradeid:
+            type: string
+          tradeState:
+            type: string
+          purchaserId:
+            type: string
+            format: uint64
+          vendorId:
+            type: string
+            format: uint64
+          transportId:
+            type: string
+            format: uint64
+          commodity:
+            type: string
+          purchaserLocation:
+            type: string
+          vendorLocation:
+            type: string
+          commodityPrice:
+            type: string
+            format: uint64
+          transportPrice:
+            type: string
+            format: uint64
+          vendorTradePending:
+            type: boolean
+          vendorTradeAccepted:
+            type: boolean
+          vendorTradeRejected:
+            type: boolean
+          vendorCommodityDispatched:
+            type: boolean
+          transporterTradePending:
+            type: boolean
+          transporterTradeAccepted:
+            type: boolean
+          transporterTradeRejected:
+            type: boolean
+          transporterVendorReached:
+            type: boolean
+          transporterCommodityCollected:
+            type: boolean
+          transporterPurchaserReached:
+            type: boolean
+          transporterCommodityDistributed:
+            type: boolean
+          deadline:
+            type: string
+  QueryGetTransporterResponse:
+    type: object
+    properties:
+      transporter:
+        type: object
+        properties:
+          transporterid:
+            type: string
+          active:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
+          escrowed:
+            type: string
+            format: uint64
+  QueryGetVendorResponse:
+    type: object
+    properties:
+      vendor:
+        type: object
+        properties:
+          vendorid:
+            type: string
+          name:
+            type: string
+          commodity:
+            type: string
+          location:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
+  QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        type: object
+  logisticsbeta.Params:
+    type: object
+  logisticsbeta.Purchaser:
+    type: object
+    properties:
+      purchaserid:
+        type: string
+      active:
+        type: string
+      location:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+  logisticsbeta.SystemInfo1:
+    type: object
+    properties:
+      nextPurchaser:
+        type: string
+        format: uint64
+  logisticsbeta.SystemInfo2:
+    type: object
+    properties:
+      nextVendor:
+        type: string
+        format: uint64
+  logisticsbeta.SystemInfo3:
+    type: object
+    properties:
+      nextTransporter:
+        type: string
+        format: uint64
+  logisticsbeta.SystemInfo4:
+    type: object
+    properties:
+      nextTrade:
+        type: string
+        format: uint64
+  logisticsbeta.Trade:
+    type: object
+    properties:
+      tradeid:
+        type: string
+      tradeState:
+        type: string
+      purchaserId:
+        type: string
+        format: uint64
+      vendorId:
+        type: string
+        format: uint64
+      transportId:
+        type: string
+        format: uint64
+      commodity:
+        type: string
+      purchaserLocation:
+        type: string
+      vendorLocation:
+        type: string
+      commodityPrice:
+        type: string
+        format: uint64
+      transportPrice:
+        type: string
+        format: uint64
+      vendorTradePending:
+        type: boolean
+      vendorTradeAccepted:
+        type: boolean
+      vendorTradeRejected:
+        type: boolean
+      vendorCommodityDispatched:
+        type: boolean
+      transporterTradePending:
+        type: boolean
+      transporterTradeAccepted:
+        type: boolean
+      transporterTradeRejected:
+        type: boolean
+      transporterVendorReached:
+        type: boolean
+      transporterCommodityCollected:
+        type: boolean
+      transporterPurchaserReached:
+        type: boolean
+      transporterCommodityDistributed:
+        type: boolean
+      deadline:
+        type: string
+  logisticsbeta.Transporter:
+    type: object
+    properties:
+      transporterid:
+        type: string
+      active:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+      escrowed:
+        type: string
+        format: uint64
+  logisticsbeta.Vendor:
+    type: object
+    properties:
+      vendorid:
+        type: string
+      name:
+        type: string
+      commodity:
+        type: string
+      location:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+  MsgCreatePurchaserResponse:
+    type: object
+    properties:
+      purchaserIndex:
+        type: string
+  MsgCreateTradeResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateTransporterPurchaserReachedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateTransporterResponse:
+    type: object
+    properties:
+      transporterIndex:
+        type: string
+  MsgCreateTransporterTradeAcceptedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateTransporterTradeRejectedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateTransporterVendorReachedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateVendorResponse:
+    type: object
+    properties:
+      vendorIndex:
+        type: string
+  MsgCreateVendorTradeAcceptResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgCreateVendorTradeRejectResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  MsgUpdateParamsResponse:
+    type: object
+  Params:
+    type: object

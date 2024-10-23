@@ -1,0 +1,13 @@
+syntax = "proto3";
+package logisticsbeta.logisticsbeta;
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
+
+message Transporter {
+  string transporterid = 1;
+  string active = 2;
+  string walletId = 3;
+  string offchainId = 4;
+  uint64 escrowed = 5;
+
+}

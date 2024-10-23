@@ -1,0 +1,15 @@
+syntax = "proto3";
+package logisticsbeta.temporary;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/temporary/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "logisticsbeta/x/temporary/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package logisticsbeta.logisticsbeta;
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
+
+message Purchaser {
+  string purchaserid = 1; 
+  string active = 2; 
+  string location = 3; 
+  string walletId = 4; 
+  string offchainId = 5; 
+  
+}
+

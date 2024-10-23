@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package logisticsbeta.logisticsbeta;
 
 import "amino/amino.proto";
@@ -12,29 +13,143 @@ option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
 // Msg defines the Msg service.
 service Msg {
   option (cosmos.msg.v1.service) = true;
-
+  
   // UpdateParams defines a (governance) operation for updating the module
   // parameters. The authority defaults to the x/gov module account.
-  rpc UpdateParams(MsgUpdateParams) returns (MsgUpdateParamsResponse);
+  rpc UpdateParams                      (MsgUpdateParams                     ) returns (MsgUpdateParamsResponse                     );
+  rpc CreateVendor                      (MsgCreateVendor                     ) returns (MsgCreateVendorResponse                     );
+  rpc CreatePurchaser                   (MsgCreatePurchaser                  ) returns (MsgCreatePurchaserResponse                  );
+  rpc CreateTransporter                 (MsgCreateTransporter                ) returns (MsgCreateTransporterResponse                );
+  rpc CreateTrade                       (MsgCreateTrade                      ) returns (MsgCreateTradeResponse                      );
+  rpc CreateVendorTradeAccept           (MsgCreateVendorTradeAccept          ) returns (MsgCreateVendorTradeAcceptResponse          );
+  rpc CreateVendorTradeReject           (MsgCreateVendorTradeReject          ) returns (MsgCreateVendorTradeRejectResponse          );
+  rpc CreateTransporterTradeAccepted    (MsgCreateTransporterTradeAccepted   ) returns (MsgCreateTransporterTradeAcceptedResponse   );
+  rpc CreateTransporterTradeRejected    (MsgCreateTransporterTradeRejected   ) returns (MsgCreateTransporterTradeRejectedResponse   );
+  rpc CreateTransporterVendorReached    (MsgCreateTransporterVendorReached   ) returns (MsgCreateTransporterVendorReachedResponse   );
+  rpc CreateTransporterPurchaserReached (MsgCreateTransporterPurchaserReached) returns (MsgCreateTransporterPurchaserReachedResponse);
 }
-
 // MsgUpdateParams is the Msg/UpdateParams request type.
 message MsgUpdateParams {
-  option (cosmos.msg.v1.signer) = "authority";
-  option (amino.name) = "logisticsbeta/x/logisticsbeta/MsgUpdateParams";
-
+  option (cosmos.msg.v1.signer) =                                     "authority";
+  option           (amino.name) = "logisticsbeta/x/logisticsbeta/MsgUpdateParams";
+  
   // authority is the address that controls the module (defaults to x/gov unless overwritten).
   string authority = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 
   // params defines the module parameters to update.
-  //
+  
   // NOTE: All parameters must be supplied.
-  Params params = 2 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+  Params params = 2 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
 }
 
 // MsgUpdateParamsResponse defines the response structure for executing a
 // MsgUpdateParams message.
 message MsgUpdateParamsResponse {}
+
+message MsgCreateVendor {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator    = 1;
+  string name       = 2;
+  string offchainid = 3;
+}
+
+message MsgCreateVendorResponse {
+  string vendorIndex = 1;
+}
+
+message MsgCreatePurchaser {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator    = 1;
+  string offchainid = 2;
+}
+
+message MsgCreatePurchaserResponse {
+  string purchaserIndex = 1;
+}
+
+message MsgCreateTransporter {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator    = 1;
+  string offchainid = 2;
+}
+
+message MsgCreateTransporterResponse {
+  string transporterIndex = 1;
+}
+
+message MsgCreateTrade {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator           = 1;
+  uint64 purchaserid       = 2;
+  uint64 vendorid          = 3;
+  string commodity         = 4;
+  string purchaserlocation = 5;
+  string vendorlocation    = 6;
+  uint64 commodityprice    = 7;
+  uint64 transportprice    = 8;
+}
+
+message MsgCreateTradeResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateVendorTradeAccept {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateVendorTradeAcceptResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateVendorTradeReject {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateVendorTradeRejectResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateTransporterTradeAccepted {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateTransporterTradeAcceptedResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateTransporterTradeRejected {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateTransporterTradeRejectedResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateTransporterVendorReached {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateTransporterVendorReachedResponse {
+  string tradeIndex = 1;
+}
+
+message MsgCreateTransporterPurchaserReached {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1;
+  uint64 tradeid = 2;
+}
+
+message MsgCreateTransporterPurchaserReachedResponse {
+  string tradeIndex = 1;
+}
+

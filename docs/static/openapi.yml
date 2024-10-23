@@ -16219,6 +16219,503 @@ paths:
               parameters.
       tags:
         - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreatePurchaser:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreatePurchaser
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              purchaserIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              offchainid:
+                type: string
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTrade:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTrade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              purchaserid:
+                type: string
+                format: uint64
+              vendorid:
+                type: string
+                format: uint64
+              commodity:
+                type: string
+              purchaserlocation:
+                type: string
+              vendorlocation:
+                type: string
+              commodityprice:
+                type: string
+                format: uint64
+              transportprice:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTransporter:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTransporter
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              transporterIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              offchainid:
+                type: string
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTransporterPurchaserReached:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTransporterPurchaserReached
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTransporterTradeAccepted:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTransporterTradeAccepted
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTransporterTradeRejected:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTransporterTradeRejected
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateTransporterVendorReached:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateTransporterVendorReached
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateVendor:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateVendor
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              vendorIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              name:
+                type: string
+              offchainid:
+                type: string
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateVendorTradeAccept:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateVendorTradeAccept
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/CreateVendorTradeReject:
+    post:
+      operationId: LogisticsbetaLogisticsbetaMsg_CreateVendorTradeReject
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              tradeIndex:
+                type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              creator:
+                type: string
+              tradeid:
+                type: string
+                format: uint64
+      tags:
+        - Msg
+  /logisticsbeta.logisticsbeta.Msg/UpdateParams:
+    post:
+      summary: |-
+        UpdateParams defines a (governance) operation for updating the module
+        parameters. The authority defaults to the x/gov module account.
+      operationId: LogisticsbetaLogisticsbetaMsg_UpdateParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            description: >-
+              MsgUpdateParamsResponse defines the response structure for
+              executing a
+
+              MsgUpdateParams message.
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: body
+          description: MsgUpdateParams is the Msg/UpdateParams request type.
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              authority:
+                type: string
+                description: >-
+                  authority is the address that controls the module (defaults to
+                  x/gov unless overwritten).
+              params:
+                description: 'NOTE: All parameters must be supplied.'
+                type: object
+            description: MsgUpdateParams is the Msg/UpdateParams request type.
+      tags:
+        - Msg
   /XxSNiPxX/logisticsBeta/logisticsbeta/params:
     get:
       summary: Parameters queries the parameters of the module.
@@ -16255,12 +16752,948 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /logisticsbeta.logisticsbeta.Msg/UpdateParams:
+  /XxSNiPxX/logisticsBeta/logisticsbeta/purchaser:
+    get:
+      operationId: LogisticsbetaLogisticsbetaQuery_PurchaserAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              purchaser:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    purchaserid:
+                      type: string
+                    active:
+                      type: string
+                    location:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    description: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently. It will be empty if
+                      there are no more results.
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/purchaser/{purchaserid}:
+    get:
+      summary: Queries a list of Purchaser items.
+      operationId: LogisticsbetaLogisticsbetaQuery_Purchaser
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              purchaser:
+                type: object
+                properties:
+                  purchaserid:
+                    type: string
+                  active:
+                    type: string
+                  location:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: purchaserid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_1:
+    get:
+      summary: Queries a SystemInfo1 by index.
+      operationId: LogisticsbetaLogisticsbetaQuery_SystemInfo1
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo1:
+                type: object
+                properties:
+                  nextPurchaser:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_2:
+    get:
+      summary: Queries a SystemInfo2 by index.
+      operationId: LogisticsbetaLogisticsbetaQuery_SystemInfo2
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo2:
+                type: object
+                properties:
+                  nextVendor:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_3:
+    get:
+      summary: Queries a SystemInfo3 by index.
+      operationId: LogisticsbetaLogisticsbetaQuery_SystemInfo3
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo3:
+                type: object
+                properties:
+                  nextTransporter:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/system_info_4:
+    get:
+      summary: Queries a SystemInfo4 by index.
+      operationId: LogisticsbetaLogisticsbetaQuery_SystemInfo4
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              SystemInfo4:
+                type: object
+                properties:
+                  nextTrade:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/trade:
+    get:
+      operationId: LogisticsbetaLogisticsbetaQuery_TradeAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              trade:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    tradeid:
+                      type: string
+                    tradeState:
+                      type: string
+                    purchaserId:
+                      type: string
+                      format: uint64
+                    vendorId:
+                      type: string
+                      format: uint64
+                    transportId:
+                      type: string
+                      format: uint64
+                    commodity:
+                      type: string
+                    purchaserLocation:
+                      type: string
+                    vendorLocation:
+                      type: string
+                    commodityPrice:
+                      type: string
+                      format: uint64
+                    transportPrice:
+                      type: string
+                      format: uint64
+                    vendorTradePending:
+                      type: boolean
+                    vendorTradeAccepted:
+                      type: boolean
+                    vendorTradeRejected:
+                      type: boolean
+                    vendorCommodityDispatched:
+                      type: boolean
+                    transporterTradePending:
+                      type: boolean
+                    transporterTradeAccepted:
+                      type: boolean
+                    transporterTradeRejected:
+                      type: boolean
+                    transporterVendorReached:
+                      type: boolean
+                    transporterCommodityCollected:
+                      type: boolean
+                    transporterPurchaserReached:
+                      type: boolean
+                    transporterCommodityDistributed:
+                      type: boolean
+                    deadline:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    description: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently. It will be empty if
+                      there are no more results.
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/trade/{tradeid}:
+    get:
+      summary: Queries a list of Trade items.
+      operationId: LogisticsbetaLogisticsbetaQuery_Trade
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              trade:
+                type: object
+                properties:
+                  tradeid:
+                    type: string
+                  tradeState:
+                    type: string
+                  purchaserId:
+                    type: string
+                    format: uint64
+                  vendorId:
+                    type: string
+                    format: uint64
+                  transportId:
+                    type: string
+                    format: uint64
+                  commodity:
+                    type: string
+                  purchaserLocation:
+                    type: string
+                  vendorLocation:
+                    type: string
+                  commodityPrice:
+                    type: string
+                    format: uint64
+                  transportPrice:
+                    type: string
+                    format: uint64
+                  vendorTradePending:
+                    type: boolean
+                  vendorTradeAccepted:
+                    type: boolean
+                  vendorTradeRejected:
+                    type: boolean
+                  vendorCommodityDispatched:
+                    type: boolean
+                  transporterTradePending:
+                    type: boolean
+                  transporterTradeAccepted:
+                    type: boolean
+                  transporterTradeRejected:
+                    type: boolean
+                  transporterVendorReached:
+                    type: boolean
+                  transporterCommodityCollected:
+                    type: boolean
+                  transporterPurchaserReached:
+                    type: boolean
+                  transporterCommodityDistributed:
+                    type: boolean
+                  deadline:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: tradeid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/transporter:
+    get:
+      operationId: LogisticsbetaLogisticsbetaQuery_TransporterAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              transporter:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    transporterid:
+                      type: string
+                    active:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+                    escrowed:
+                      type: string
+                      format: uint64
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    description: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently. It will be empty if
+                      there are no more results.
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/transporter/{transporterid}:
+    get:
+      summary: Queries a list of Transporter items.
+      operationId: LogisticsbetaLogisticsbetaQuery_Transporter
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              transporter:
+                type: object
+                properties:
+                  transporterid:
+                    type: string
+                  active:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+                  escrowed:
+                    type: string
+                    format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: transporterid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/vendor:
+    get:
+      operationId: LogisticsbetaLogisticsbetaQuery_VendorAll
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              vendor:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    vendorid:
+                      type: string
+                    name:
+                      type: string
+                    commodity:
+                      type: string
+                    location:
+                      type: string
+                    walletId:
+                      type: string
+                    offchainId:
+                      type: string
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    description: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently. It will be empty if
+                      there are no more results.
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the
+
+                  corresponding request message has used PageRequest.
+
+                   message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs.
+
+            count_total is only respected when offset is used. It is ignored
+            when key
+
+            is set.
+          in: query
+          required: false
+          type: boolean
+        - name: pagination.reverse
+          description: >-
+            reverse is set to true if results are to be returned in the
+            descending order.
+
+
+            Since: cosmos-sdk 0.43
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /XxSNiPxX/logisticsBeta/logisticsbeta/vendor/{vendorid}:
+    get:
+      summary: Queries a list of Vendor items.
+      operationId: LogisticsbetaLogisticsbetaQuery_Vendor
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              vendor:
+                type: object
+                properties:
+                  vendorid:
+                    type: string
+                  name:
+                    type: string
+                  commodity:
+                    type: string
+                  location:
+                    type: string
+                  walletId:
+                    type: string
+                  offchainId:
+                    type: string
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: vendorid
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /logisticsbeta.temporary.Msg/UpdateParams:
     post:
       summary: |-
         UpdateParams defines a (governance) operation for updating the module
         parameters. The authority defaults to the x/gov module account.
-      operationId: LogisticsbetaLogisticsbetaMsg_UpdateParams
+      operationId: LogisticsbetaTemporaryMsg_UpdateParams
       responses:
         '200':
           description: A successful response.
@@ -22963,9 +24396,620 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
+  logisticsbeta.logisticsbeta.MsgCreatePurchaser:
+    type: object
+    properties:
+      creator:
+        type: string
+      offchainid:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreatePurchaserResponse:
+    type: object
+    properties:
+      purchaserIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTrade:
+    type: object
+    properties:
+      creator:
+        type: string
+      purchaserid:
+        type: string
+        format: uint64
+      vendorid:
+        type: string
+        format: uint64
+      commodity:
+        type: string
+      purchaserlocation:
+        type: string
+      vendorlocation:
+        type: string
+      commodityprice:
+        type: string
+        format: uint64
+      transportprice:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateTradeResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporter:
+    type: object
+    properties:
+      creator:
+        type: string
+      offchainid:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporterPurchaserReached:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateTransporterPurchaserReachedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporterResponse:
+    type: object
+    properties:
+      transporterIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporterTradeAccepted:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateTransporterTradeAcceptedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporterTradeRejected:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateTransporterTradeRejectedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateTransporterVendorReached:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateTransporterVendorReachedResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateVendor:
+    type: object
+    properties:
+      creator:
+        type: string
+      name:
+        type: string
+      offchainid:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateVendorResponse:
+    type: object
+    properties:
+      vendorIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateVendorTradeAccept:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateVendorTradeAcceptResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgCreateVendorTradeReject:
+    type: object
+    properties:
+      creator:
+        type: string
+      tradeid:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.MsgCreateVendorTradeRejectResponse:
+    type: object
+    properties:
+      tradeIndex:
+        type: string
+  logisticsbeta.logisticsbeta.MsgUpdateParams:
+    type: object
+    properties:
+      authority:
+        type: string
+        description: >-
+          authority is the address that controls the module (defaults to x/gov
+          unless overwritten).
+      params:
+        description: 'NOTE: All parameters must be supplied.'
+        type: object
+    description: MsgUpdateParams is the Msg/UpdateParams request type.
+  logisticsbeta.logisticsbeta.MsgUpdateParamsResponse:
+    type: object
+    description: |-
+      MsgUpdateParamsResponse defines the response structure for executing a
+      MsgUpdateParams message.
   logisticsbeta.logisticsbeta.Params:
     type: object
     description: Params defines the parameters for the module.
+  cosmos.base.query.v1beta1.PageRequest:
+    type: object
+    properties:
+      key:
+        type: string
+        format: byte
+        description: |-
+          key is a value returned in PageResponse.next_key to begin
+          querying the next page most efficiently. Only one of offset or key
+          should be set.
+      offset:
+        type: string
+        format: uint64
+        description: |-
+          offset is a numeric offset that can be used when key is unavailable.
+          It is less efficient than using key. Only one of offset or key should
+          be set.
+      limit:
+        type: string
+        format: uint64
+        description: >-
+          limit is the total number of results to be returned in the result
+          page.
+
+          If left empty it will default to a value to be set by each app.
+      count_total:
+        type: boolean
+        description: >-
+          count_total is set to true  to indicate that the result set should
+          include
+
+          a count of the total number of items available for pagination in UIs.
+
+          count_total is only respected when offset is used. It is ignored when
+          key
+
+          is set.
+      reverse:
+        type: boolean
+        description: >-
+          reverse is set to true if results are to be returned in the descending
+          order.
+
+
+          Since: cosmos-sdk 0.43
+    description: |-
+      message SomeRequest {
+               Foo some_parameter = 1;
+               PageRequest pagination = 2;
+       }
+    title: |-
+      PageRequest is to be embedded in gRPC request messages for efficient
+      pagination. Ex:
+  cosmos.base.query.v1beta1.PageResponse:
+    type: object
+    properties:
+      next_key:
+        type: string
+        format: byte
+        description: |-
+          next_key is the key to be passed to PageRequest.key to
+          query the next page most efficiently. It will be empty if
+          there are no more results.
+      total:
+        type: string
+        format: uint64
+        title: |-
+          total is total number of results available if PageRequest.count_total
+          was set, its value is undefined otherwise
+    description: |-
+      PageResponse is to be embedded in gRPC response messages where the
+      corresponding request message has used PageRequest.
+
+       message SomeResponse {
+               repeated Bar results = 1;
+               PageResponse page = 2;
+       }
+  logisticsbeta.logisticsbeta.Purchaser:
+    type: object
+    properties:
+      purchaserid:
+        type: string
+      active:
+        type: string
+      location:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+  logisticsbeta.logisticsbeta.QueryAllPurchaserResponse:
+    type: object
+    properties:
+      purchaser:
+        type: array
+        items:
+          type: object
+          properties:
+            purchaserid:
+              type: string
+            active:
+              type: string
+            location:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  logisticsbeta.logisticsbeta.QueryAllTradeResponse:
+    type: object
+    properties:
+      trade:
+        type: array
+        items:
+          type: object
+          properties:
+            tradeid:
+              type: string
+            tradeState:
+              type: string
+            purchaserId:
+              type: string
+              format: uint64
+            vendorId:
+              type: string
+              format: uint64
+            transportId:
+              type: string
+              format: uint64
+            commodity:
+              type: string
+            purchaserLocation:
+              type: string
+            vendorLocation:
+              type: string
+            commodityPrice:
+              type: string
+              format: uint64
+            transportPrice:
+              type: string
+              format: uint64
+            vendorTradePending:
+              type: boolean
+            vendorTradeAccepted:
+              type: boolean
+            vendorTradeRejected:
+              type: boolean
+            vendorCommodityDispatched:
+              type: boolean
+            transporterTradePending:
+              type: boolean
+            transporterTradeAccepted:
+              type: boolean
+            transporterTradeRejected:
+              type: boolean
+            transporterVendorReached:
+              type: boolean
+            transporterCommodityCollected:
+              type: boolean
+            transporterPurchaserReached:
+              type: boolean
+            transporterCommodityDistributed:
+              type: boolean
+            deadline:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  logisticsbeta.logisticsbeta.QueryAllTransporterResponse:
+    type: object
+    properties:
+      transporter:
+        type: array
+        items:
+          type: object
+          properties:
+            transporterid:
+              type: string
+            active:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+            escrowed:
+              type: string
+              format: uint64
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  logisticsbeta.logisticsbeta.QueryAllVendorResponse:
+    type: object
+    properties:
+      vendor:
+        type: array
+        items:
+          type: object
+          properties:
+            vendorid:
+              type: string
+            name:
+              type: string
+            commodity:
+              type: string
+            location:
+              type: string
+            walletId:
+              type: string
+            offchainId:
+              type: string
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            description: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently. It will be empty if
+              there are no more results.
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding request message has used PageRequest.
+
+           message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+  logisticsbeta.logisticsbeta.QueryGetPurchaserResponse:
+    type: object
+    properties:
+      purchaser:
+        type: object
+        properties:
+          purchaserid:
+            type: string
+          active:
+            type: string
+          location:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
+  logisticsbeta.logisticsbeta.QueryGetSystemInfo1Response:
+    type: object
+    properties:
+      SystemInfo1:
+        type: object
+        properties:
+          nextPurchaser:
+            type: string
+            format: uint64
+  logisticsbeta.logisticsbeta.QueryGetSystemInfo2Response:
+    type: object
+    properties:
+      SystemInfo2:
+        type: object
+        properties:
+          nextVendor:
+            type: string
+            format: uint64
+  logisticsbeta.logisticsbeta.QueryGetSystemInfo3Response:
+    type: object
+    properties:
+      SystemInfo3:
+        type: object
+        properties:
+          nextTransporter:
+            type: string
+            format: uint64
+  logisticsbeta.logisticsbeta.QueryGetSystemInfo4Response:
+    type: object
+    properties:
+      SystemInfo4:
+        type: object
+        properties:
+          nextTrade:
+            type: string
+            format: uint64
+  logisticsbeta.logisticsbeta.QueryGetTradeResponse:
+    type: object
+    properties:
+      trade:
+        type: object
+        properties:
+          tradeid:
+            type: string
+          tradeState:
+            type: string
+          purchaserId:
+            type: string
+            format: uint64
+          vendorId:
+            type: string
+            format: uint64
+          transportId:
+            type: string
+            format: uint64
+          commodity:
+            type: string
+          purchaserLocation:
+            type: string
+          vendorLocation:
+            type: string
+          commodityPrice:
+            type: string
+            format: uint64
+          transportPrice:
+            type: string
+            format: uint64
+          vendorTradePending:
+            type: boolean
+          vendorTradeAccepted:
+            type: boolean
+          vendorTradeRejected:
+            type: boolean
+          vendorCommodityDispatched:
+            type: boolean
+          transporterTradePending:
+            type: boolean
+          transporterTradeAccepted:
+            type: boolean
+          transporterTradeRejected:
+            type: boolean
+          transporterVendorReached:
+            type: boolean
+          transporterCommodityCollected:
+            type: boolean
+          transporterPurchaserReached:
+            type: boolean
+          transporterCommodityDistributed:
+            type: boolean
+          deadline:
+            type: string
+  logisticsbeta.logisticsbeta.QueryGetTransporterResponse:
+    type: object
+    properties:
+      transporter:
+        type: object
+        properties:
+          transporterid:
+            type: string
+          active:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
+          escrowed:
+            type: string
+            format: uint64
+  logisticsbeta.logisticsbeta.QueryGetVendorResponse:
+    type: object
+    properties:
+      vendor:
+        type: object
+        properties:
+          vendorid:
+            type: string
+          name:
+            type: string
+          commodity:
+            type: string
+          location:
+            type: string
+          walletId:
+            type: string
+          offchainId:
+            type: string
   logisticsbeta.logisticsbeta.QueryParamsResponse:
     type: object
     properties:
@@ -22973,7 +25017,112 @@ definitions:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
-  logisticsbeta.logisticsbeta.MsgUpdateParams:
+  logisticsbeta.logisticsbeta.SystemInfo1:
+    type: object
+    properties:
+      nextPurchaser:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.SystemInfo2:
+    type: object
+    properties:
+      nextVendor:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.SystemInfo3:
+    type: object
+    properties:
+      nextTransporter:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.SystemInfo4:
+    type: object
+    properties:
+      nextTrade:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.Trade:
+    type: object
+    properties:
+      tradeid:
+        type: string
+      tradeState:
+        type: string
+      purchaserId:
+        type: string
+        format: uint64
+      vendorId:
+        type: string
+        format: uint64
+      transportId:
+        type: string
+        format: uint64
+      commodity:
+        type: string
+      purchaserLocation:
+        type: string
+      vendorLocation:
+        type: string
+      commodityPrice:
+        type: string
+        format: uint64
+      transportPrice:
+        type: string
+        format: uint64
+      vendorTradePending:
+        type: boolean
+      vendorTradeAccepted:
+        type: boolean
+      vendorTradeRejected:
+        type: boolean
+      vendorCommodityDispatched:
+        type: boolean
+      transporterTradePending:
+        type: boolean
+      transporterTradeAccepted:
+        type: boolean
+      transporterTradeRejected:
+        type: boolean
+      transporterVendorReached:
+        type: boolean
+      transporterCommodityCollected:
+        type: boolean
+      transporterPurchaserReached:
+        type: boolean
+      transporterCommodityDistributed:
+        type: boolean
+      deadline:
+        type: string
+  logisticsbeta.logisticsbeta.Transporter:
+    type: object
+    properties:
+      transporterid:
+        type: string
+      active:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+      escrowed:
+        type: string
+        format: uint64
+  logisticsbeta.logisticsbeta.Vendor:
+    type: object
+    properties:
+      vendorid:
+        type: string
+      name:
+        type: string
+      commodity:
+        type: string
+      location:
+        type: string
+      walletId:
+        type: string
+      offchainId:
+        type: string
+  logisticsbeta.temporary.MsgUpdateParams:
     type: object
     properties:
       authority:
@@ -22988,8 +25137,11 @@ definitions:
           NOTE: All parameters must be supplied.
         type: object
     description: MsgUpdateParams is the Msg/UpdateParams request type.
-  logisticsbeta.logisticsbeta.MsgUpdateParamsResponse:
+  logisticsbeta.temporary.MsgUpdateParamsResponse:
     type: object
     description: |-
       MsgUpdateParamsResponse defines the response structure for executing a
       MsgUpdateParams message.
+  logisticsbeta.temporary.Params:
+    type: object
+    description: Params defines the parameters for the module.

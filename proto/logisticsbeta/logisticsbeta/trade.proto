@@ -1,0 +1,30 @@
+syntax = "proto3";
+package logisticsbeta.logisticsbeta;
+
+option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
+
+message Trade {
+  string tradeid = 1;
+  string tradeState = 2;
+  uint64 purchaserId = 3;
+  uint64 vendorId = 4;
+  uint64 transportId = 5;
+  string commodity = 6;
+  string purchaserLocation = 7;
+  string vendorLocation = 8;
+  uint64 commodityPrice = 9;
+  uint64 transportPrice = 10;
+  bool vendorTradePending = 11;
+  bool vendorTradeAccepted = 12;
+  bool vendorTradeRejected = 13;
+  bool vendorCommodityDispatched = 14;
+  bool transporterTradePending = 15;
+  bool transporterTradeAccepted = 16;
+  bool transporterTradeRejected = 17;
+  bool transporterVendorReached = 18;
+  bool transporterCommodityCollected = 19;
+  bool transporterPurchaserReached = 20;
+  bool transporterCommodityDistributed = 21;
+  string deadline = 22;
+
+}

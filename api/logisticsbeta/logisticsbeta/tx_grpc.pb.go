@@ -8,7 +8,6 @@ package logisticsbeta
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,7 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Msg_UpdateParams_FullMethodName = "/logisticsbeta.logisticsbeta.Msg/UpdateParams"
+	Msg_UpdateParams_FullMethodName                      = "/logisticsbeta.logisticsbeta.Msg/UpdateParams"
+	Msg_CreateVendor_FullMethodName                      = "/logisticsbeta.logisticsbeta.Msg/CreateVendor"
+	Msg_CreatePurchaser_FullMethodName                   = "/logisticsbeta.logisticsbeta.Msg/CreatePurchaser"
+	Msg_CreateTransporter_FullMethodName                 = "/logisticsbeta.logisticsbeta.Msg/CreateTransporter"
+	Msg_CreateTrade_FullMethodName                       = "/logisticsbeta.logisticsbeta.Msg/CreateTrade"
+	Msg_CreateVendorTradeAccept_FullMethodName           = "/logisticsbeta.logisticsbeta.Msg/CreateVendorTradeAccept"
+	Msg_CreateVendorTradeReject_FullMethodName           = "/logisticsbeta.logisticsbeta.Msg/CreateVendorTradeReject"
+	Msg_CreateTransporterTradeAccepted_FullMethodName    = "/logisticsbeta.logisticsbeta.Msg/CreateTransporterTradeAccepted"
+	Msg_CreateTransporterTradeRejected_FullMethodName    = "/logisticsbeta.logisticsbeta.Msg/CreateTransporterTradeRejected"
+	Msg_CreateTransporterVendorReached_FullMethodName    = "/logisticsbeta.logisticsbeta.Msg/CreateTransporterVendorReached"
+	Msg_CreateTransporterPurchaserReached_FullMethodName = "/logisticsbeta.logisticsbeta.Msg/CreateTransporterPurchaserReached"
 )
 
 // MsgClient is the client API for Msg service.
@@ -30,6 +39,16 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
+	CreateVendor(ctx context.Context, in *MsgCreateVendor, opts ...grpc.CallOption) (*MsgCreateVendorResponse, error)
+	CreatePurchaser(ctx context.Context, in *MsgCreatePurchaser, opts ...grpc.CallOption) (*MsgCreatePurchaserResponse, error)
+	CreateTransporter(ctx context.Context, in *MsgCreateTransporter, opts ...grpc.CallOption) (*MsgCreateTransporterResponse, error)
+	CreateTrade(ctx context.Context, in *MsgCreateTrade, opts ...grpc.CallOption) (*MsgCreateTradeResponse, error)
+	CreateVendorTradeAccept(ctx context.Context, in *MsgCreateVendorTradeAccept, opts ...grpc.CallOption) (*MsgCreateVendorTradeAcceptResponse, error)
+	CreateVendorTradeReject(ctx context.Context, in *MsgCreateVendorTradeReject, opts ...grpc.CallOption) (*MsgCreateVendorTradeRejectResponse, error)
+	CreateTransporterTradeAccepted(ctx context.Context, in *MsgCreateTransporterTradeAccepted, opts ...grpc.CallOption) (*MsgCreateTransporterTradeAcceptedResponse, error)
+	CreateTransporterTradeRejected(ctx context.Context, in *MsgCreateTransporterTradeRejected, opts ...grpc.CallOption) (*MsgCreateTransporterTradeRejectedResponse, error)
+	CreateTransporterVendorReached(ctx context.Context, in *MsgCreateTransporterVendorReached, opts ...grpc.CallOption) (*MsgCreateTransporterVendorReachedResponse, error)
+	CreateTransporterPurchaserReached(ctx context.Context, in *MsgCreateTransporterPurchaserReached, opts ...grpc.CallOption) (*MsgCreateTransporterPurchaserReachedResponse, error)
 }
 
 type msgClient struct {
@@ -49,6 +68,96 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
+func (c *msgClient) CreateVendor(ctx context.Context, in *MsgCreateVendor, opts ...grpc.CallOption) (*MsgCreateVendorResponse, error) {
+	out := new(MsgCreateVendorResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateVendor_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreatePurchaser(ctx context.Context, in *MsgCreatePurchaser, opts ...grpc.CallOption) (*MsgCreatePurchaserResponse, error) {
+	out := new(MsgCreatePurchaserResponse)
+	err := c.cc.Invoke(ctx, Msg_CreatePurchaser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTransporter(ctx context.Context, in *MsgCreateTransporter, opts ...grpc.CallOption) (*MsgCreateTransporterResponse, error) {
+	out := new(MsgCreateTransporterResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTransporter_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTrade(ctx context.Context, in *MsgCreateTrade, opts ...grpc.CallOption) (*MsgCreateTradeResponse, error) {
+	out := new(MsgCreateTradeResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTrade_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateVendorTradeAccept(ctx context.Context, in *MsgCreateVendorTradeAccept, opts ...grpc.CallOption) (*MsgCreateVendorTradeAcceptResponse, error) {
+	out := new(MsgCreateVendorTradeAcceptResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateVendorTradeAccept_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateVendorTradeReject(ctx context.Context, in *MsgCreateVendorTradeReject, opts ...grpc.CallOption) (*MsgCreateVendorTradeRejectResponse, error) {
+	out := new(MsgCreateVendorTradeRejectResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateVendorTradeReject_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTransporterTradeAccepted(ctx context.Context, in *MsgCreateTransporterTradeAccepted, opts ...grpc.CallOption) (*MsgCreateTransporterTradeAcceptedResponse, error) {
+	out := new(MsgCreateTransporterTradeAcceptedResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTransporterTradeAccepted_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTransporterTradeRejected(ctx context.Context, in *MsgCreateTransporterTradeRejected, opts ...grpc.CallOption) (*MsgCreateTransporterTradeRejectedResponse, error) {
+	out := new(MsgCreateTransporterTradeRejectedResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTransporterTradeRejected_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTransporterVendorReached(ctx context.Context, in *MsgCreateTransporterVendorReached, opts ...grpc.CallOption) (*MsgCreateTransporterVendorReachedResponse, error) {
+	out := new(MsgCreateTransporterVendorReachedResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTransporterVendorReached_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) CreateTransporterPurchaserReached(ctx context.Context, in *MsgCreateTransporterPurchaserReached, opts ...grpc.CallOption) (*MsgCreateTransporterPurchaserReachedResponse, error) {
+	out := new(MsgCreateTransporterPurchaserReachedResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateTransporterPurchaserReached_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -56,6 +165,16 @@ type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
+	CreateVendor(context.Context, *MsgCreateVendor) (*MsgCreateVendorResponse, error)
+	CreatePurchaser(context.Context, *MsgCreatePurchaser) (*MsgCreatePurchaserResponse, error)
+	CreateTransporter(context.Context, *MsgCreateTransporter) (*MsgCreateTransporterResponse, error)
+	CreateTrade(context.Context, *MsgCreateTrade) (*MsgCreateTradeResponse, error)
+	CreateVendorTradeAccept(context.Context, *MsgCreateVendorTradeAccept) (*MsgCreateVendorTradeAcceptResponse, error)
+	CreateVendorTradeReject(context.Context, *MsgCreateVendorTradeReject) (*MsgCreateVendorTradeRejectResponse, error)
+	CreateTransporterTradeAccepted(context.Context, *MsgCreateTransporterTradeAccepted) (*MsgCreateTransporterTradeAcceptedResponse, error)
+	CreateTransporterTradeRejected(context.Context, *MsgCreateTransporterTradeRejected) (*MsgCreateTransporterTradeRejectedResponse, error)
+	CreateTransporterVendorReached(context.Context, *MsgCreateTransporterVendorReached) (*MsgCreateTransporterVendorReachedResponse, error)
+	CreateTransporterPurchaserReached(context.Context, *MsgCreateTransporterPurchaserReached) (*MsgCreateTransporterPurchaserReachedResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -65,6 +184,36 @@ type UnimplementedMsgServer struct {
 
 func (UnimplementedMsgServer) UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
+}
+func (UnimplementedMsgServer) CreateVendor(context.Context, *MsgCreateVendor) (*MsgCreateVendorResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVendor not implemented")
+}
+func (UnimplementedMsgServer) CreatePurchaser(context.Context, *MsgCreatePurchaser) (*MsgCreatePurchaserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePurchaser not implemented")
+}
+func (UnimplementedMsgServer) CreateTransporter(context.Context, *MsgCreateTransporter) (*MsgCreateTransporterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransporter not implemented")
+}
+func (UnimplementedMsgServer) CreateTrade(context.Context, *MsgCreateTrade) (*MsgCreateTradeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTrade not implemented")
+}
+func (UnimplementedMsgServer) CreateVendorTradeAccept(context.Context, *MsgCreateVendorTradeAccept) (*MsgCreateVendorTradeAcceptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVendorTradeAccept not implemented")
+}
+func (UnimplementedMsgServer) CreateVendorTradeReject(context.Context, *MsgCreateVendorTradeReject) (*MsgCreateVendorTradeRejectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateVendorTradeReject not implemented")
+}
+func (UnimplementedMsgServer) CreateTransporterTradeAccepted(context.Context, *MsgCreateTransporterTradeAccepted) (*MsgCreateTransporterTradeAcceptedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransporterTradeAccepted not implemented")
+}
+func (UnimplementedMsgServer) CreateTransporterTradeRejected(context.Context, *MsgCreateTransporterTradeRejected) (*MsgCreateTransporterTradeRejectedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransporterTradeRejected not implemented")
+}
+func (UnimplementedMsgServer) CreateTransporterVendorReached(context.Context, *MsgCreateTransporterVendorReached) (*MsgCreateTransporterVendorReachedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransporterVendorReached not implemented")
+}
+func (UnimplementedMsgServer) CreateTransporterPurchaserReached(context.Context, *MsgCreateTransporterPurchaserReached) (*MsgCreateTransporterPurchaserReachedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTransporterPurchaserReached not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -97,6 +246,186 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateVendor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateVendor)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateVendor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateVendor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateVendor(ctx, req.(*MsgCreateVendor))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreatePurchaser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreatePurchaser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreatePurchaser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreatePurchaser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreatePurchaser(ctx, req.(*MsgCreatePurchaser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTransporter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTransporter)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTransporter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTransporter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTransporter(ctx, req.(*MsgCreateTransporter))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTrade_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTrade)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTrade(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTrade_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTrade(ctx, req.(*MsgCreateTrade))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateVendorTradeAccept_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateVendorTradeAccept)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateVendorTradeAccept(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateVendorTradeAccept_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateVendorTradeAccept(ctx, req.(*MsgCreateVendorTradeAccept))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateVendorTradeReject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateVendorTradeReject)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateVendorTradeReject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateVendorTradeReject_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateVendorTradeReject(ctx, req.(*MsgCreateVendorTradeReject))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTransporterTradeAccepted_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTransporterTradeAccepted)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTransporterTradeAccepted(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTransporterTradeAccepted_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTransporterTradeAccepted(ctx, req.(*MsgCreateTransporterTradeAccepted))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTransporterTradeRejected_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTransporterTradeRejected)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTransporterTradeRejected(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTransporterTradeRejected_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTransporterTradeRejected(ctx, req.(*MsgCreateTransporterTradeRejected))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTransporterVendorReached_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTransporterVendorReached)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTransporterVendorReached(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTransporterVendorReached_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTransporterVendorReached(ctx, req.(*MsgCreateTransporterVendorReached))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_CreateTransporterPurchaserReached_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateTransporterPurchaserReached)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateTransporterPurchaserReached(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateTransporterPurchaserReached_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateTransporterPurchaserReached(ctx, req.(*MsgCreateTransporterPurchaserReached))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -107,6 +436,46 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateParams",
 			Handler:    _Msg_UpdateParams_Handler,
+		},
+		{
+			MethodName: "CreateVendor",
+			Handler:    _Msg_CreateVendor_Handler,
+		},
+		{
+			MethodName: "CreatePurchaser",
+			Handler:    _Msg_CreatePurchaser_Handler,
+		},
+		{
+			MethodName: "CreateTransporter",
+			Handler:    _Msg_CreateTransporter_Handler,
+		},
+		{
+			MethodName: "CreateTrade",
+			Handler:    _Msg_CreateTrade_Handler,
+		},
+		{
+			MethodName: "CreateVendorTradeAccept",
+			Handler:    _Msg_CreateVendorTradeAccept_Handler,
+		},
+		{
+			MethodName: "CreateVendorTradeReject",
+			Handler:    _Msg_CreateVendorTradeReject_Handler,
+		},
+		{
+			MethodName: "CreateTransporterTradeAccepted",
+			Handler:    _Msg_CreateTransporterTradeAccepted_Handler,
+		},
+		{
+			MethodName: "CreateTransporterTradeRejected",
+			Handler:    _Msg_CreateTransporterTradeRejected_Handler,
+		},
+		{
+			MethodName: "CreateTransporterVendorReached",
+			Handler:    _Msg_CreateTransporterVendorReached_Handler,
+		},
+		{
+			MethodName: "CreateTransporterPurchaserReached",
+			Handler:    _Msg_CreateTransporterPurchaserReached_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

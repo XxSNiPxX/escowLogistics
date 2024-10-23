@@ -1,17 +1,33 @@
 syntax = "proto3";
+
 package logisticsbeta.logisticsbeta;
 
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
 import "logisticsbeta/logisticsbeta/params.proto";
+import "logisticsbeta/logisticsbeta/system_info_1.proto";
+import "logisticsbeta/logisticsbeta/system_info_2.proto";
+import "logisticsbeta/logisticsbeta/system_info_3.proto";
+import "logisticsbeta/logisticsbeta/vendor.proto";
+import "logisticsbeta/logisticsbeta/purchaser.proto";
+import "logisticsbeta/logisticsbeta/transporter.proto";
+import "logisticsbeta/logisticsbeta/system_info_4.proto";
+import "logisticsbeta/logisticsbeta/trade.proto";
 
 option go_package = "github.com/XxSNiPxX/logisticsBeta/x/logisticsbeta/types";
 
 // GenesisState defines the logisticsbeta module's genesis state.
 message GenesisState {
+  
   // params defines all the parameters of the module.
-  Params params = 1 [
-    (gogoproto.nullable) = false,
-    (amino.dont_omitempty) = true
-  ];
+           Params      params          = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+           SystemInfo1 systemInfo1     = 2 [(gogoproto.nullable) = false] ;
+           SystemInfo2 systemInfo2     = 3 [(gogoproto.nullable) = false] ;
+           SystemInfo3 systemInfo3     = 4 [(gogoproto.nullable) = false] ;
+  repeated Vendor      vendorList      = 5 [(gogoproto.nullable) = false] ;
+  repeated Purchaser   purchaserList   = 6 [(gogoproto.nullable) = false] ;
+  repeated Transporter transporterList = 7 [(gogoproto.nullable) = false] ;
+           SystemInfo4 systemInfo4     = 8 [(gogoproto.nullable) = false] ;
+  repeated Trade       tradeList       = 9 [(gogoproto.nullable) = false] ;
 }
+
