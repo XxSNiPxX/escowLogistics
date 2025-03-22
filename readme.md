@@ -2,50 +2,6 @@
 
 **logisticsbeta** is a blockchain built using Cosmos SDK and Tendermint and created with [Ignite CLI](https://ignite.com/cli).
 
-## Get Started
-
-```sh
-ignite chain serve
-```
-
-The `serve` command installs dependencies, builds, initializes, and starts your blockchain in development.
-
-### Configure
-
-Your blockchain in development can be configured with `config.yml`. To learn more, see the [Ignite CLI docs](https://docs.ignite.com).
-
-### Web Frontend
-
-Additionally, Ignite CLI offers both Vue and React options for frontend scaffolding:
-
-- For a Vue frontend, use: `ignite scaffold vue`
-- For a React frontend, use: `ignite scaffold react`
-
-These commands can be run within your scaffolded blockchain project.
-
-For more information, see the [monorepo for Ignite front-end development](https://github.com/ignite/web).
-
-## Release
-
-To release a new version of your blockchain, create and push a new tag with the `v` prefix. A new draft release with the configured targets will be created.
-
-```sh
-git tag v0.1
-git push origin v0.1
-```
-
-After a draft release is created, make your final changes from the release page and publish it.
-
-### Install
-
-To install the latest version of your blockchain node's binary, execute the following command on your machine:
-
-```sh
-curl https://get.ignite.com/XxSNiPxX/logisticsBeta@latest! | sudo bash
-```
-
-`XxSNiPxX/logisticsBeta` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
-
 ## What Problem Does This Idea Solve?
 
 The idea solves the problem of food aggregators charging exorbitant prices from the restaurant (vendor) and customer (purchaser) while taking a cut from the delivery riders (transporter), by providing an architecture, enabled by IBC, that introduces effective dispute resolution and incentivizes cooperation.
@@ -95,6 +51,53 @@ Each chain maintains its own data, including customer profiles, vendor listings,
 5. **Dispute Management:**
    - An **off-chain customer support** system handles disputes and ensures fairness in case of order issues.
 
+> “Innovation distinguishes between a leader and a follower.” - **Steve Jobs**
+
+## Get Started
+
+```sh
+ignite chain serve
+```
+
+The `serve` command installs dependencies, builds, initializes, and starts your blockchain in development.
+
+### Configure
+
+Your blockchain in development can be configured with `config.yml`. To learn more, see the [Ignite CLI docs](https://docs.ignite.com).
+
+### Web Frontend
+
+Additionally, Ignite CLI offers both Vue and React options for frontend scaffolding:
+
+- For a Vue frontend, use: `ignite scaffold vue`
+- For a React frontend, use: `ignite scaffold react`
+
+These commands can be run within your scaffolded blockchain project.
+
+For more information, see the [monorepo for Ignite front-end development](https://github.com/ignite/web).
+
+## Release
+
+To release a new version of your blockchain, create and push a new tag with the `v` prefix. A new draft release with the configured targets will be created.
+
+```sh
+git tag v0.1
+git push origin v0.1
+```
+
+After a draft release is created, make your final changes from the release page and publish it.
+
+### Install
+
+To install the latest version of your blockchain node's binary, execute the following command on your machine:
+
+```sh
+curl https://get.ignite.com/XxSNiPxX/logisticsBeta@latest! | sudo bash
+```
+
+`XxSNiPxX/logisticsBeta` should match the `username` and `repo_name` of the Github repository to which the source code was pushed. Learn more about [the install process](https://github.com/allinbits/starport-installer).
+
+
 ## Learn More
 
 - [Ignite CLI](https://ignite.com/cli)
@@ -103,4 +106,3 @@ Each chain maintains its own data, including customer profiles, vendor listings,
 - [Cosmos SDK Docs](https://docs.cosmos.network)
 - [Developer Chat](https://discord.gg/ignite)
 
-> “Innovation distinguishes between a leader and a follower.” - **Steve Jobs**
