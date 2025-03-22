@@ -19,9 +19,11 @@ The current landscape of the food delivery industry includes initiatives like **
 
 ## Architecture
 
-![Flow_1729535702606_1](https://github.com/user-attachments/assets/1879fd5d-d955-406c-8716-065a59626373)
 
 The system consists of **four main blockchain networks** built on the **Cosmos SDK**:
+
+![Flow_1729535702606_1(1)](https://github.com/user-attachments/assets/a2b86e45-d295-4cbb-a992-8aff39f558ce)
+
 
 1. **Purchaser Chain** (Customer)
 2. **Vendor Chain** (Restaurant)
