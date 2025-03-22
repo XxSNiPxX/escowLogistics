@@ -4,6 +4,7 @@
 
 ## What Problem Does This Idea Solve?
 
+
 The idea solves the problem of food aggregators charging exorbitant prices from the restaurant (vendor) and customer (purchaser) while taking a cut from the delivery riders (transporter), by providing an architecture, enabled by IBC, that introduces effective dispute resolution and incentivizes cooperation.
 
 ## Target Audience & Benefits
@@ -17,6 +18,8 @@ A **dispute management platform** is also introduced to resolve conflicts among 
 The current landscape of the food delivery industry includes initiatives like **ONDC** (Open Network for Digital Commerce), which decentralizes transactions among multiple sellers, buyers, logistics providers, and payment gateways. While ONDC has its own challenges, **logisticsbeta** aims to standardize its philosophy via **IBC (Inter-Blockchain Communication).**
 
 ## Architecture
+
+![Flow_1729535702606_1](https://github.com/user-attachments/assets/1879fd5d-d955-406c-8716-065a59626373)
 
 The system consists of **four main blockchain networks** built on the **Cosmos SDK**:
 
